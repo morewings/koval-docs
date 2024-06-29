@@ -1,1 +1,16 @@
 # Theme
+
+Koval UI supports theming colors, sizes and fonts via **Provider** component `theme` prop.
+
+```tsx
+import type {FC} from 'react';
+import {Provider} from 'koval-ui';
+
+const theme = {
+    colorDo: 'green',
+};
+
+export const App: FC = () => {
+    return <Provider theme={theme}>{/*App code*/}</Provider>;
+};
+```

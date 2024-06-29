@@ -6,7 +6,7 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/morewings/react-forge-ui',
   },
-  docsRepositoryBase: 'https://github.com/morewings/koval-docs',
+  docsRepositoryBase: 'https://github.com/morewings/koval-docs/blob/master',
   footer: {
     text: 'React components collection: Koval UI',
   },
