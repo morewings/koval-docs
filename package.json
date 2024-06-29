@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
+  "name": "koval-docs",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "Koval UI docs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,17 +13,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/morewings/koval-docs.git"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Dima Vyshniakov <morewings@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/morewings/koval-docs/issues"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://koval.support/",
   "dependencies": {
-    "koval-ui": "^0.12.22",
-    "next": "13.5.6",
+    "koval-ui": "0.12.22",
+    "next": "14.2.4",
     "nextra": "2.13.4",
     "nextra-theme-docs": "2.13.4",
     "react": "18.3.1",
