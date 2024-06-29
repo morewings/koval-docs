@@ -1,0 +1,40 @@
+import {Tabs} from 'nextra/components';
+
+# Quickstart
+
+## Install Koval UI
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+    <Tabs.Tab>npm i koval-ui</Tabs.Tab>
+    <Tabs.Tab>pnpm add koval-ui</Tabs.Tab>
+    <Tabs.Tab>npm add koval-ui</Tabs.Tab>
+</Tabs>
+
+## Wrap with Provider and set theme
+
+Wrap your application code with Koval Provider component at the highest possible level.
+
+```tsx filename="App.tsx"
+import type {FC} from 'react';
+import {Provider, themePodil, themeDnipro} from 'koval-ui';
+
+const App: FC = () => {
+    /**
+     *  There are two themes available at the moment: themePodil, themeDnipro.
+     *  themePodil is chosen by default
+     */
+    return <Provider theme={themePodil}>{/*App contents*/}</Provider>;
+};
+```
+
+## Add Koval CSS
+
+Include Koval CSS to your bundle.
+
+```tsx filename="App.tsx"
+import 'koval-ui/dist/style.css';
+
+const App = () => {
+    /*App contents */
+};
+```

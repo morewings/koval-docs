@@ -1,10 +1,13 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
-    "type": "page"
+  "quickstart": "Quick Start",
+  "theme": "Theme",
+  "layout": "Layout",
+  "input-validation": "Input and form state validation",
+  "floating-components": "Floating components",
+  "storybook_link": {
+    "title": "⤴ Storybook",
+    "href": "https://morewings.github.io/koval-ui/"
   },
   "contact": {
     "title": "Contact ↗",
