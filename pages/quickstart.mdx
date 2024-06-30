@@ -12,11 +12,12 @@ import {Tabs} from 'nextra/components';
 
 ## Wrap with Provider and set theme
 
-Wrap your application code with Koval Provider component at the highest possible level.
+Wrap your application code with Koval Provider component at the highest possible level. Include Koval CSS to your bundle.
 
-```tsx filename="App.tsx"
+```tsx filename="App.tsx" {2,3, 10}
 import type {FC} from 'react';
 import {Provider, themePodil, themeDnipro} from 'koval-ui';
+import 'koval-ui/dist/style.css';
 
 const App: FC = () => {
     /**
@@ -24,17 +25,5 @@ const App: FC = () => {
      *  themePodil is chosen by default
      */
     return <Provider theme={themePodil}>{/*App contents*/}</Provider>;
-};
-```
-
-## Add Koval CSS
-
-Include Koval CSS to your bundle.
-
-```tsx filename="App.tsx"
-import 'koval-ui/dist/style.css';
-
-const App = () => {
-    /*App contents */
 };
 ```
