@@ -22,7 +22,7 @@
   },
   "homepage": "https://koval.support/",
   "dependencies": {
-    "koval-ui": "0.12.22",
+    "koval-ui": "0.12.23",
     "next": "14.2.4",
     "nextra": "2.13.4",
     "nextra-theme-docs": "2.13.4",
