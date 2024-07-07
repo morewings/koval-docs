@@ -1,0 +1,81 @@
+import {Iframe} from '@/components/iframe';
+
+# Page layout
+
+Page layout provides utility components to organize arbitrary web page sections: `Header`, `Main`, `Sidebar` and `Footer`.
+
+See [Storybook documentation](https://morewings.github.io/koval-ui/?path=/docs/layout-page--docs).
+
+## Code example
+
+```tsx
+import {Main, Footer, Sidebar, Header, Content, Page} from 'koval-ui';
+return (
+    <Page>
+        <Header>This is Header</Header>
+        <Content>
+            <Sidebar xs={3}>This is Sidebar</Sidebar>
+            <Main>This is Main</Main>
+        </Content>
+        <Footer>This is Footer</Footer>
+    </Page>
+);
+```
+
+## Page layout demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=children:withLeftSidebar&globals=&id=layout-page--primary&viewMode=story"
+    width={777}
+    height={666}
+/>
+
+## Configuration
+
+### Page
+
+`Page` component serves as a container and works the same as [Grid](/layout/grid#grid) component.
+
+See [all Page props](https://morewings.github.io/koval-ui/?path=/docs/layout-page--docs#page-props).
+
+### Header
+
+`Header` can be `sticky` via corresponding prop.
+
+#### Sticky header demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=children:withStickyHeader&globals=&id=layout-page--primary&viewMode=story"
+    width={777}
+    height={666}
+/>
+
+See [all Header props](https://morewings.github.io/koval-ui/?path=/docs/layout-page--docs#header-props).
+
+### Content
+
+`Content` wraps page content and sidebar. Works the same as [Row](/layout/grid#row) component.
+
+See [all Content props](https://morewings.github.io/koval-ui/?path=/docs/layout-page--docs#content-props).
+
+### Page content
+
+`Sidebar` and `Main` work the same as [Col](/layout/grid#col) component.
+
+See [all Sidebar props](https://morewings.github.io/koval-ui/?path=/docs/layout-page--docs#sidebar-props).
+
+See [all Main props](https://morewings.github.io/koval-ui/?path=/docs/layout-page--docs#main-props).
+
+### Footer
+
+`Footer` component always sticks to the bottom of the page.
+
+See [all Footer props](https://morewings.github.io/koval-ui/?path=/docs/layout-page--docs#footer-props).
+
+#### Footer demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=children:onlyFooter&globals=&id=layout-page--primary&viewMode=story"
+    width={777}
+    height={333}
+/>

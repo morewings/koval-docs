@@ -1,0 +1,98 @@
+import {Iframe} from '@/components/iframe';
+
+# Grid layout
+
+Koval provides support for a responsive grid layout through its `Grid`, `Row`, and `Column` components.
+
+For detailed examples, refer to the [Storybook documentation](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs).
+
+## Grid example
+
+```tsx
+import {Grid, Row, Col} from 'koval-ui';
+
+return (
+    <Grid>
+        <Row>
+            <Col xs={12}>This is Grid example</Col>
+        </Row>
+    </Grid>
+);
+```
+
+### Demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=children:responsive&id=layout-grid--primary&viewMode=story"
+    width={777}
+    height={450}
+/>
+
+## Configuration
+
+The grid layout is designed to be fully responsive, ensuring that your content looks great on all devices, from mobile phones to large desktop screens.
+
+### Grid
+
+`Grid` component serves as a wrapper. The grid **width** can be specified as a `number` or as `fluid` string, which sets the width to 100%. Developers can define the **number of columns** using the `base` prop, with recommended values being 12, 16, or 24. The `gap` prop allows control over the width between columns.
+
+See [all Grid props](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs#grid-props).
+
+### Row
+
+`Row` component creates horizontal section for rendering the line of content.
+
+See [all Row props](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs#row-props).
+
+### Col
+
+`Col` component creates grid column. Developers can configure **width** and **shift** of the column. By using predefined breakpoints and t-shirt sizes (`xs`, `sm`, `md`, `lg`, `xl`), the grid layout ensures a consistent look and feel across different screen sizes. Each of them is available as a prop which accepts number of columns or `fluid`, which indicates that column takes **all available width**.
+
+See [all Col props](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs#col-props).
+
+```tsx {2,5}
+<Row>
+    <Col xs={6} md={10}>
+        6 columns at small screens and 10 columns at medium and bigger screens
+    </Col>
+    <Col xs="fluid">Takes the rest of available width.</Col>
+</Row>
+```
+
+#### Fluid column Demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=children:fluid&globals=&id=layout-grid--primary&viewMode=story"
+    width={777}
+    height={188}
+/>
+
+It's also possible to shift column towards right side, using same breakpoints via `shiftXX` prop.
+
+```tsx {2}
+<Row>
+    <Col xs={8} shiftXS={2}>
+        8 columns width, offset 2 columns
+    </Col>
+</Row>
+```
+
+#### Column offset Demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=children:offset&globals=&id=layout-grid--primary&viewMode=story"
+    width={777}
+    height={188}
+/>
+
+## Breakpoint values
+
+Breakpoints are applied from smallest to biggest, so the biggest one has the preference.
+
+| Name |      Value      |                      Description                       |
+| :--- | :-------------: | :----------------------------------------------------: |
+| XS   | width >= 320px  |           Tiny screens (e.g., mobile phones)           |
+| SM   | width >= 640px  |             Small screens (e.g., tablets)              |
+| MD   | width >= 992px  |     Medium screens (e.g., tablets, small laptops)      |
+| LG   | width >= 1366px |             Large screens (e.g., desktops)             |
+| XL   | width >= 1920px | Extra large screens (e.g., large desktops, TV screens) |
