@@ -1,15 +1,22 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import type {DocsThemeConfig} from 'nextra-theme-docs';
+
+import {Logo} from '@/components/Logo';
+import classes from '@/components/Logo/Logo.module.css';
 
 const config: DocsThemeConfig = {
-  logo: <span>Koval UI</span>,
-  project: {
-    link: 'https://github.com/morewings/koval-ui',
-  },
-  docsRepositoryBase: 'https://github.com/morewings/koval-docs/blob/master',
-  footer: {
-    text: 'React components collection: Koval UI',
-  },
-}
+    logo: (
+        <div className={classes.wrapper}>
+            <Logo />
+            <div className={classes.text}>Koval UI: User Guide</div>
+        </div>
+    ),
+    project: {
+        link: 'https://github.com/morewings/koval-ui',
+    },
+    docsRepositoryBase: 'https://github.com/morewings/koval-docs/blob/master',
+    footer: {
+        text: 'React components collection: Koval UI',
+    },
+};
 
-export default config
+export default config;

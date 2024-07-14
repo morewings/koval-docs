@@ -1,0 +1,16 @@
+.logo {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+
+.text {
+    font-weight: bolder;
+}
