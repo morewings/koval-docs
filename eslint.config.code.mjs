@@ -19,7 +19,7 @@ export default [
     configPrettierRecommended,
     {
         files: ['**/*.{js,ts,tsx,cjs,mjs}'],
-        ignores: ['**/*.mdx', '**/*.mdx/*.{ts,tsx}'],
+        ignores: ['**/*.mdx'],
         linterOptions: {
             reportUnusedDisableDirectives: 'error',
         },
@@ -139,15 +139,6 @@ export default [
                     arrowParens: 'avoid',
                 },
             ],
-        },
-    },
-    {
-        ...mdx.flatCodeBlocks,
-        rules: {
-            ...mdx.flatCodeBlocks.rules,
-            // if you want to override some rules for code blocks
-            'react/jsx-no-undef': 'off',
-            '@typescript-eslint/no-unused-vars': 'off',
         },
     },
 ];
