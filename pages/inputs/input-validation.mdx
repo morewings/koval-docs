@@ -1,3 +1,29 @@
+import {CodeEditorFull, CodeEditor} from '@/components/CodeEditor';
+
 # Input validation
 
 Tba
+
+<CodeEditorFull
+    files={{
+        'App.tsx': `import {Button} from 'koval-ui';
+export default function App() {
+  return (
+    <Button>Hello, world!</Button>
+  );
+};
+`,
+    }}
+/>
+
+<CodeEditor
+    files={{
+        'App.tsx': `import {Button} from 'koval-ui';
+export default function App() {
+  return (
+    <Button>Hello, world!</Button>
+  );
+};
+`,
+    }}
+/>

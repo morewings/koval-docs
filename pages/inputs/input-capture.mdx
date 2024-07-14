@@ -7,11 +7,13 @@ Each input supports both **controlled** and **uncontrolled** modes. The earlier 
 The main difference is that when using controlled value, you have to update `value` prop in order for it to be shown to the user.
 
 ```tsx
-import {InputText} from "koval-ui";
+import {InputText} from 'koval-ui';
 
 // controlled input
-<InputText value="Controlled value" />
+<InputText value="Controlled value" />;
+```
 
+```tsx
 // uncontrolled input
 <InputText defaultValue="Uncontrolled value" />
 ```
