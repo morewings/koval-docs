@@ -1,0 +1,115 @@
+# Input capture API
+
+## Controlled and non-controlled mode
+
+Each input supports both **controlled** and **uncontrolled** modes. The earlier means that input value is controlled from outside component and is provided by `value` or `checked` prop; the latter means that input value is controlled by browser, `defaultValue` or `defaultChecked` prop.
+
+The main difference is that when using controlled value, you have to update `value` prop in order for it to be shown to the user.
+
+```tsx
+import {InputText} from "koval-ui";
+
+// controlled input
+<InputText value="Controlled value" />
+
+// uncontrolled input
+<InputText defaultValue="Uncontrolled value" />
+```
+
+## Textual input value props
+
+Value of each input is controlled by the following set of props.
+
+```ts
+import type {InputHTMLAttributes} from 'react';
+
+export type CallbackPropsTextual = {
+    /**
+     * Provide value for controlled TextInput.
+     * Setting this prop enables controlled mode.
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#value
+     */
+    value?: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>['value'];
+    /**
+     * Provide value for non-controlled TextInput.
+     * Setting this prop enables non-controlled mode.
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#value
+     */
+    defaultValue?: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>['defaultValue'];
+    /**
+     * Disable input.
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#disabled
+     */
+    disabled?: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>['disabled'];
+    /**
+     * Makes the element not mutable, meaning the user can not edit the control
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly
+     */
+    readOnly?: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>['readOnly'];
+};
+```
+
+## Interactive input value
+
+Note that `value` prop serves a special purpose for inputs of interactive type: when a form is submitted, only inputs which are currently checked are submitted to the server, and this is reported value.
+
+```ts
+import type {InputHTMLAttributes} from 'react';
+
+export type CallbackPropsInteractive = {
+    /**
+     * Provide value CheckboxInput.
+     * NB! This prop is unlike TextInput and doesn't influence a state of input! Use `checked` prop for that.
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#additional_attributes
+     */
+    value?: InputHTMLAttributes<HTMLInputElement>['value'];
+    /**
+     * Provide default checked state for non-controlled CheckboxInput.
+     * Setting this prop enables non-controlled mode.
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#additional_attributes
+     */
+    defaultChecked?: InputHTMLAttributes<HTMLInputElement>['checked'];
+    /**
+     * Provide checked state for controlled CheckboxInput.
+     * Setting this prop enables controlled mode.
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#additional_attributes
+     */
+    checked?: InputHTMLAttributes<HTMLInputElement>['checked'];
+};
+```
+
+## Callbacks
+
+Changes to input value and state are reported by callback functions. Each callback is similar to HTMLInputElement native callback prop.
+
+```ts
+import type {ChangeEvent, FocusEvent, InputHTMLAttributes, KeyboardEvent} from 'react';
+
+export type CallbackProps = {
+    /**
+     * Set on change callback to get Event object.
+     * @see https://reactjs.org/docs/events.html#form-events
+     */
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+    /**
+     * Set on focus callback to get Event object.
+     * @see https://reactjs.org/docs/events.html#onfocus
+     */
+    onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
+    /**
+     * Set on blur callback to get Event object.
+     * @see https://reactjs.org/docs/events.html#onblur
+     */
+    onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
+    /**
+     * Set on key down callback to get Event object.
+     * @see https://reactjs.org/docs/events.html#keyboard-events
+     */
+    onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
+    /**
+     * Set on key up callback to get Event object.
+     * @see https://reactjs.org/docs/events.html#keyboard-events
+     */
+    onKeyUp?: (event: KeyboardEvent<HTMLInputElement>) => void;
+};
+```

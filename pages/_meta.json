@@ -3,7 +3,8 @@
   "quickstart": "Quick Start",
   "theme": "Theme",
   "layout": "Layout",
-  "input-validation": "Input and form state validation",
+  "component-api": "Library Component API",
+  "inputs": "Inputs & Forms",
   "floating-components": "Floating components",
   "storybook_link": {
     "title": "Storybook ↗",

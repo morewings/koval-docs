@@ -22,6 +22,7 @@
   },
   "homepage": "https://koval.support/",
   "dependencies": {
+    "css-vars-hook": "0.7.9",
     "koval-ui": "0.12.23",
     "next": "14.2.4",
     "nextra": "2.13.4",
