@@ -4,7 +4,7 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 const config: DocsThemeConfig = {
   logo: <span>Koval UI</span>,
   project: {
-    link: 'https://github.com/morewings/react-forge-ui',
+    link: 'https://github.com/morewings/koval-ui',
   },
   docsRepositoryBase: 'https://github.com/morewings/koval-docs/blob/master',
   footer: {
