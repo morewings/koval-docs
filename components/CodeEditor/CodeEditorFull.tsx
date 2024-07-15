@@ -10,7 +10,7 @@ import {
 } from '@codesandbox/sandpack-react';
 import {githubLight} from '@codesandbox/sandpack-themes';
 
-import {indexCode} from './indexCode';
+import {appCode, stylesCode} from './indexCode';
 
 export type Props = {
     files?: SandpackFiles;
@@ -20,13 +20,18 @@ export type Props = {
 
 export const CodeEditorFull: FC<Props> = ({
     files: filesProp = {},
-    template = 'react-ts' as const,
-    options = {},
+    template = 'nextjs' as const,
+    options: optionsProp = {},
 }) => {
     const files = useMemo<SandpackFiles>(
         () => ({
-            'index.tsx': {
-                code: indexCode,
+            'pages/_app.js': {
+                code: appCode,
+                readOnly: true,
+                hidden: true,
+            },
+            'styles.css': {
+                code: stylesCode,
                 readOnly: true,
                 hidden: true,
             },
@@ -34,6 +39,10 @@ export const CodeEditorFull: FC<Props> = ({
         }),
         [filesProp]
     );
+
+    // TODO: check if bundler works
+    const options = useMemo(() => ({autorun: false, ...optionsProp}), [optionsProp]);
+
     return (
         <SandpackProvider
             files={files}

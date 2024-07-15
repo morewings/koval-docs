@@ -1,29 +1,121 @@
-import {CodeEditorFull, CodeEditor} from '@/components/CodeEditor';
+import {CodeEditor} from '@/components/CodeEditor';
+import {Iframe} from '@/components/Iframe';
 
 # Input validation
 
-Tba
+Input validation in Koval is done via **built-in validation props** (`required`, `pattern` etc.) or **validator function** (`validatorFn` prop) which allows custom and async validation.
 
-<CodeEditorFull
+Koval uses native HTMLInputElement error API and browser built-in error tooltips.
+
+## Built-in validation
+
+Koval inputs support HTMLInputElement built-in validations: `required`, `pattern` (textual inputs only).
+
+### Demo textual
+
+<CodeEditor
     files={{
-        'App.tsx': `import {Button} from 'koval-ui';
-export default function App() {
+        'pages/index.js': `import {InputText} from 'koval-ui';
+export default function Example() {
   return (
-    <Button>Hello, world!</Button>
+    <InputText
+      placeholder="Type to test"
+      // email address format expected
+      pattern="[^@\\s]+@[^@\\s]+"
+      // show error when input is empty
+      required />
   );
 };
 `,
     }}
 />
 
+### Demo interactive
+
 <CodeEditor
     files={{
-        'App.tsx': `import {Button} from 'koval-ui';
-export default function App() {
+        'pages/index.js': `import {InputCheckbox} from 'koval-ui';
+export default function Example() {
   return (
-    <Button>Hello, world!</Button>
+    <InputCheckbox
+      label="Click to test"
+      required />
   );
 };
 `,
     }}
+/>
+
+## Custom validation
+
+Developer can provide `validatorFn` to each input to achieve custom validation. This prop works like a callback. It runs every time input value changes.
+
+### Validator function definition
+
+```ts
+type validatorFn = (
+    value: unknown,
+    validityState: ValidityState,
+    formState: Record<string, FormDataEntryValue>
+) => string | Promise<string>;
+```
+
+The [ValidityState interface](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) represents the browser built-in validity states that an input can be in.
+
+`formState` is a special object containing full form state, in case input belongs to the form. [FormDataEntryValue](https://udn.realityripple.com/docs/Web/API/FormDataEntryValue) represents a single value from a set of [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) key-value pairs.
+
+Validator can work in either **sync** (returns `string`) or (returns `Promise<string>`) **async** mode. Empty string (`''`) is considered to be positive validation result, non-empty produces input error with the provided text.
+
+### Sync validator
+
+Useful for complex data validations on client side.
+
+<CodeEditor
+    files={{
+        'pages/index.js': `import {InputText} from 'koval-ui';
+const validatorFn = (value) => {
+    console.log('Value captured:', value);
+    if (value && value.length > 3) {
+        return 'Too long';
+    } else {
+        return '';
+    }
+}
+export default function Example() {
+  return (
+    <InputText
+      placeholder="Type to test"
+      validatorFn={validatorFn} />
+  );
+};
+`,
+    }}
+/>
+
+### Async validator
+
+Can be used to validate data on server side. Runs debounced with 1000ms delay.
+
+```tsx
+import {InputText} from 'koval-ui';
+
+const validatorFn = async value => {
+    console.log('Value captured:', value);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    if (value && value.length > 3) {
+        return `Last captured: ${value}`;
+    } else {
+        return '';
+    }
+};
+export default function Example() {
+    return <InputText placeholder="Type to test" validatorFn={validatorFn} />;
+}
+```
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=placeholder:Type%20to%20test;validatorFn:asyncValidator&id=inputs-text--primary&viewMode=story"
+    width={777}
+    height={100}
+    caption="Async validation demo"
 />
