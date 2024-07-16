@@ -28,7 +28,7 @@
     "@codesandbox/sandpack-themes": "^2.0.21",
     "css-vars-hook": "0.7.9",
     "koval-ui": "0.12.23",
-    "next": "14.2.4",
+    "next": "14.2.5",
     "nextra": "2.13.4",
     "nextra-theme-docs": "2.13.4",
     "react": "18.3.1",

@@ -7,6 +7,7 @@ import {
     SandpackFileExplorer,
     SandpackCodeEditor,
     SandpackPreview,
+    SandpackConsole,
 } from '@codesandbox/sandpack-react';
 import {githubLight} from '@codesandbox/sandpack-themes';
 
@@ -59,6 +60,7 @@ export const CodeEditorFull: FC<Props> = ({
                 <SandpackCodeEditor closableTabs showTabs />
                 <SandpackPreview />
             </SandpackLayout>
+            <SandpackConsole />
         </SandpackProvider>
     );
 };
