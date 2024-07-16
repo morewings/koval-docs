@@ -3,15 +3,15 @@ import {Iframe} from '@/components/Iframe';
 
 # Input validation
 
-Input validation in Koval is done via **built-in validation props** (`required`, `pattern` etc.) or **validator function** (`validatorFn` prop) which allows custom and async validation.
+Input validation in Koval is made through **built-in validation properties** (`required`, `pattern`, etc.) or a **validator function** (`validatorFn` prop), which supports custom and asynchronous validation.
 
-Koval uses native HTMLInputElement error API and browser built-in error tooltips.
+Koval leverages the native HTMLInputElement error API and browser-integrated error tooltips.
 
 ## Built-in validation
 
-Koval inputs support HTMLInputElement built-in validations: `required`, `pattern` (textual inputs only).
+Koval inputs support the built-in validations of HTMLInputElement: `required` and `pattern` (for textual inputs only).
 
-### Demo textual
+### Textual
 
 <CodeEditor
     files={{
@@ -30,7 +30,7 @@ export default function Example() {
     }}
 />
 
-### Demo interactive
+### Interactive
 
 <CodeEditor
     files={{
@@ -48,7 +48,7 @@ export default function Example() {
 
 ## Custom validation
 
-Developer can provide `validatorFn` to each input to achieve custom validation. This prop works like a callback. It runs every time input value changes.
+Developers can provide a `validatorFn` to each input for custom validation. This prop functions as a callback, executing each time the input value changes.
 
 ### Validator function definition
 
@@ -60,17 +60,18 @@ type validatorFn = (
 ) => string | Promise<string>;
 ```
 
-The [ValidityState interface](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) represents the browser built-in validity states that an input can be in.
+The [ValidityState interface](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) represents the browser built-in validity states for an input.
 
-`formState` is a special object containing full form state, in case input belongs to the form. [FormDataEntryValue](https://udn.realityripple.com/docs/Web/API/FormDataEntryValue) represents a single value from a set of [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) key-value pairs.
+`formState` is a special object containing full form state, applicable if the input is part of a form. [FormDataEntryValue](https://udn.realityripple.com/docs/Web/API/FormDataEntryValue) represents a single value from a set of [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) key-value pairs.
 
-Validator can work in either **sync** (returns `string`) or (returns `Promise<string>`) **async** mode. Empty string (`''`) is considered to be positive validation result, non-empty produces input error with the provided text.
+Validator can work in either **sync** (returns `string`) or (returns `Promise<string>`) **async** mode. An empty string ('') indicates a positive validation result, while a non-empty string produces an input error with the provided text.
 
 ### Sync validator
 
-Useful for complex data validations on client side.
+Ideal for complex client-side data validations.
 
 <CodeEditor
+    options={{editorHeight: 420}}
     files={{
         'pages/index.js': `import {InputText} from 'koval-ui';
 const validatorFn = (value) => {
@@ -94,7 +95,7 @@ export default function Example() {
 
 ### Async validator
 
-Can be used to validate data on server side. Runs debounced with 1000ms delay.
+Useful for server-side data validation. Executes with a 1000ms debounce delay.
 
 ```tsx
 import {InputText} from 'koval-ui';
@@ -118,4 +119,81 @@ export default function Example() {
     width={777}
     height={100}
     caption="Async validation demo"
+/>
+
+## Override built-in error messages
+
+Custom error messages can be displayed for built-in validations.
+
+```tsx
+const validatorFn = (value: unknown, validityState: ValidityState) => {
+    if (validityState.valueMissing) {
+        return 'Please provide value for the input';
+    } else if (validityState.patternMismatch) {
+        return 'Please provide valid email';
+    }
+    return '';
+};
+```
+
+## Use complex validation
+
+It's possible to make input validation result to be dependent on other field value(s) belonging to the same form. Enable `revalidateOnFormChange` prop and use `formState` parameter inside `validatorFn`.
+
+<CodeEditor
+    options={{editorHeight: 666, editorWidthPercentage: 60}}
+    files={{
+        'pages/index.js': `import {
+    InputText,
+    InputGroup,
+    InputRadio,
+    Button
+} from 'koval-ui';
+const validatorFn = (value, validityState, formState) => {
+    switch (formState['case-selector']) {
+      case 'lowercase': {
+        const isLowerCase =
+          value.toLowerCase() === value;
+        return isLowerCase ?
+          '' : 'Only lower case allowed.'
+      }
+      case 'uppercase': {
+        const isUpperCase =
+          value.toUpperCase() === value;
+        return isUpperCase ?
+          '' : 'Only upper case allowed.'
+      }
+      default:
+          return '';
+    }
+};
+export default function Example() {
+  return (
+      <form action="" style={{
+          display: 'flex',
+          gap: '12px',
+          flexDirection: 'column'
+      }}>
+          <InputGroup name="case-selector">
+              <InputRadio
+                defaultChecked={true}
+                label="Allow uppercase"
+                value="uppercase"
+              />
+              <InputRadio
+                label="Allow lowercase"
+                value="lowercase"
+              />
+          </InputGroup>
+          <InputText
+            revalidateOnFormChange
+            validatorFn={validatorFn}
+            name="text"
+            placeholder="Validated dynamically" />
+        <Button type="submit">Submit</Button>
+      </form>
+  );
+};
+`,
+    }}
 />

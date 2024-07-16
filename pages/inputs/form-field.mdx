@@ -1,0 +1,37 @@
+import {Iframe} from '@/components/Iframe';
+import {CodeEditor} from '@/components/CodeEditor';
+
+# FormField
+
+The `FormField` component is designed to enhance the accessibility and usability of form inputs. It wraps a provided input element or an `InputGroup` and ensures that an accessible `label` is rendered above the input and a `hint` is displayed below it.
+
+## Example
+
+<CodeEditor
+    files={{
+        'pages/index.js': `import {FormField, InputColor} from 'koval-ui';
+export default function Example() {
+  return (
+    <FormField
+      label="Clickable label"
+      hint="This is hint">
+      <InputColor defaultValue="#CECECE" />
+    </FormField>
+  );
+};
+`,
+    }}
+/>
+
+## Demo with different inputs
+
+Open Storybook Controls to see it in action.
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/?path=/story/inputs-formfield--primary&full=1&shortcuts=false&singleStory=true"
+    width={777}
+    height={380}
+    caption="FormField story"
+/>
+
+For detailed examples, refer to the [Storybook documentation](https://morewings.github.io/koval-ui/?path=/docs/inputs-formfield--docs).

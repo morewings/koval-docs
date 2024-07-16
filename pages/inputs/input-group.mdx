@@ -1,0 +1,52 @@
+import {CodeEditor} from '@/components/CodeEditor';
+import {Iframe} from '@/components/Iframe';
+
+# InputGroup
+
+The InputGroup component is a powerful tool for managing groups of [InputCheckbox](https://morewings.github.io/koval-ui/?path=/docs/inputs-checkbox--docs) or [InputRadio](https://morewings.github.io/koval-ui/?path=/docs/inputs-radio--docs) components, ensuring that labels and hints are properly rendered and that group `name`, `required` and `disabled` states are consistently applied. This enhances the overall user experience and accessibility of your forms.
+
+## Group API
+
+Mandatory `name` prop is applied to all child inputs. There are also optional `required` adn `disabled` props, which are applied in the same manner.
+
+## Example
+
+<CodeEditor
+    options={{editorHeight: 480, editorWidthPercentage: 60}}
+    files={{
+        'pages/index.js': `import {InputGroup, InputCheckbox} from 'koval-ui';
+export default function Example() {
+  return (
+    <InputGroup
+      name="demo-group"
+      label="Group label"
+      hint="This is hint">
+      <InputCheckbox
+        value="foo"
+        label="This is a foo label"
+        required />
+      <InputCheckbox
+        value="bar"
+        label="This is a bar label" />
+      <InputCheckbox
+        value="bazz"
+        label="This is a bazz label" />
+    </InputGroup>
+  );
+};
+`,
+    }}
+/>
+
+## Demo
+
+Open Storybook Controls to see it in action.
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/?path=/story/inputs-group--primary&full=1&shortcuts=false&singleStory=true"
+    width={777}
+    height={380}
+    caption="FormField story"
+/>
+
+For detailed examples, refer to the [Storybook documentation](https://morewings.github.io/koval-ui/?path=/docs/inputs-group--docs).

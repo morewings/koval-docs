@@ -1,6 +1,8 @@
 {
   "inputs": "Inputs",
-  "input-capture": "Input Capture API",
+  "input-capture": "Input capture API",
   "input-validation": "Input validation",
+  "input-group": "InputGroup component",
+  "form-field": "FormField component",
   "form": "Form"
 }
