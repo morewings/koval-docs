@@ -1,9 +1,9 @@
-import {CodeEditor} from '@/components/CodeEditor';
+import {CodeEditor, CodeEditorBig} from '@/components/CodeEditor';
 import {Iframe} from '@/components/Iframe';
 
 # Input validation
 
-Input validation in Koval is made through **built-in validation properties** (`required`, `pattern`, etc.) or a **validator function** (`validatorFn` prop), which supports custom and asynchronous validation.
+Input validation in Koval is made through **built-in validation properties** (`required`, `pattern`, etc.) or a **validation state** (external validation result or callback function prop), which supports custom and asynchronous validation.
 
 Koval leverages the native HTMLInputElement error API and browser-integrated error tooltips.
 
@@ -48,9 +48,32 @@ export default function Example() {
 
 ## Custom validation
 
-Developers can provide a `validatorFn` to each input for custom validation. This prop functions as a callback, executing each time the input value changes.
+Developers can provide a `validation` prop to each input for custom validation. This prop functions as an external state or as a callback, executing each time the input value changes.
 
-### Validator function definition
+### External (aka controlled) validation
+
+`validation` props can accept 4 external validation states: `pristine`, `valid`, `error` and `inProgress`.
+
+| Validation state |                            Explanation                             |
+| :--------------- | :----------------------------------------------------------------: |
+| pristine         |         When user didn't interact with input. Empty icon.          |
+| valid            |              Indicates successfull validation result               |
+| error            |                 Indicates failed validation result                 |
+| inProgress       | Validation is ongoing. Useful for async validation on server side) |
+
+<CodeEditor
+    files={{
+        'pages/index.js': `import {InputText} from 'koval-ui';
+export default function Example() {
+  return (
+    <InputText validation="error" />
+  );
+};
+`,
+    }}
+/>
+
+### Custom validator function
 
 ```ts
 type validatorFn = (
@@ -86,7 +109,7 @@ export default function Example() {
   return (
     <InputText
       placeholder="Type to test"
-      validatorFn={validatorFn} />
+      validation={validatorFn} />
   );
 };
 `,
@@ -110,7 +133,7 @@ const validatorFn = async value => {
     }
 };
 export default function Example() {
-    return <InputText placeholder="Type to test" validatorFn={validatorFn} />;
+    return <InputText placeholder="Type to test" validation={validatorFn} />;
 }
 ```
 
@@ -140,8 +163,7 @@ const validatorFn = (value: unknown, validityState: ValidityState) => {
 
 It's possible to make input validation result to be dependent on other field value(s) belonging to the same form. Enable `revalidateOnFormChange` prop and use `formState` parameter inside `validatorFn`.
 
-<CodeEditor
-    options={{editorHeight: 666, editorWidthPercentage: 60}}
+<CodeEditorBig
     files={{
         'pages/index.js': `import {
     InputText,
@@ -152,16 +174,12 @@ It's possible to make input validation result to be dependent on other field val
 const validatorFn = (value, validityState, formState) => {
     switch (formState['case-selector']) {
       case 'lowercase': {
-        const isLowerCase =
-          value.toLowerCase() === value;
-        return isLowerCase ?
-          '' : 'Only lower case allowed.'
+        const isLowerCase = value.toLowerCase() === value;
+        return isLowerCase ? '' : 'Only lower case allowed.'
       }
       case 'uppercase': {
-        const isUpperCase =
-          value.toUpperCase() === value;
-        return isUpperCase ?
-          '' : 'Only upper case allowed.'
+        const isUpperCase = value.toUpperCase() === value;
+        return isUpperCase ? '' : 'Only upper case allowed.'
       }
       default:
           return '';
@@ -187,7 +205,7 @@ export default function Example() {
           </InputGroup>
           <InputText
             revalidateOnFormChange
-            validatorFn={validatorFn}
+            validation={validatorFn}
             name="text"
             placeholder="Validated dynamically" />
         <Button type="submit">Submit</Button>

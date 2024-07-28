@@ -26,6 +26,7 @@
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.18.0",
     "@codesandbox/sandpack-themes": "^2.0.21",
+    "@next/third-parties": "^14.2.5",
     "css-vars-hook": "0.7.9",
     "koval-ui": "0.12.23",
     "next": "14.2.5",

@@ -1,15 +1,18 @@
 import type {FC} from 'react';
 import {useMemo} from 'react';
 import type {SandpackFiles} from '@codesandbox/sandpack-react';
-import {Sandpack} from '@codesandbox/sandpack-react';
-// import {githubLight} from '@codesandbox/sandpack-themes';
+import {
+    SandpackProvider,
+    SandpackLayout,
+    SandpackCodeEditor,
+    SandpackPreview,
+} from '@codesandbox/sandpack-react';
 
-import classes from '@/components/CodeEditor/Editor.module.css';
-
-import type {Props} from './types';
 import {appCode, stylesCode} from './indexCode';
+import classes from './Editor.module.css';
+import type {Props} from './types';
 
-export const CodeEditor: FC<Props> = ({
+export const CodeEditorBig: FC<Props> = ({
     files: filesProp = {},
     template = 'nextjs' as const,
     options: optionsProp = {},
@@ -37,18 +40,22 @@ export const CodeEditor: FC<Props> = ({
 
     return (
         <div className={classes.wrapper}>
-            <Sandpack
+            <SandpackProvider
+                files={files}
                 customSetup={{
                     dependencies: {
-                        'koval-ui': 'latest',
                         ...dependencies,
+                        'koval-ui': 'latest',
                     },
                 }}
-                files={files}
                 theme="auto"
                 template={template}
-                options={options}
-            />
+                options={options}>
+                <SandpackCodeEditor className={classes.editor} showLineNumbers />
+                <SandpackLayout>
+                    <SandpackPreview showNavigator />
+                </SandpackLayout>
+            </SandpackProvider>
         </div>
     );
 };

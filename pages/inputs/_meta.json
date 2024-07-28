@@ -1,8 +1,9 @@
 {
   "inputs": "Inputs",
+  "input-group": "Manage input group",
+  "form-field": "Accessible form field component",
   "input-capture": "Input capture API",
   "input-validation": "Input validation",
-  "input-group": "InputGroup component",
-  "form-field": "FormField component",
-  "form": "Form"
+  "react-hook-form": "React Hook Form integration",
+  "formik": "Formik integration"
 }

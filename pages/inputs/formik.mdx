@@ -1,0 +1,81 @@
+import {CodeEditorBig} from '@/components/CodeEditor';
+
+# Use with Formik
+
+[Formik](https://formik.org/) is another popular package to validate forms. Koval UI input and form API is compatible with this package too.
+
+## Example
+
+Here is example of Formik validation using [yup](https://github.com/jquense/yup) package.
+
+<CodeEditorBig
+    options={{editorHeight: 666}}
+    dependencies={{
+        yup: '1.4.0',
+        formik: '2.4.6',
+    }}
+    files={{
+        'pages/index.js': `import {Form as KovalForm, InputText, Button, FormField} from 'koval-ui';
+import {useFormik} from 'formik';
+import * as yup from 'yup';
+const validationSchema = yup.object({
+    email: yup.string().email('Enter a valid email').required('Email is required'),
+    password: yup
+        .string()
+        .min(8, 'Password should be of minimum 8 characters length')
+        .required('Password is required')
+});
+export default function Example() {
+    /**
+     * React hook form basic setup
+     * @see https://formik.org/docs/overview
+     */
+    const formik = useFormik({
+        initialValues: {
+            email: 'foobar@example.com',
+            password: 'foobar'
+        },
+        validationSchema: validationSchema,
+        onSubmit: values => {
+            console.log(values);
+        }
+    });
+    const emailValidationState =
+        formik.touched.email && Boolean(formik.errors.email) ? 'error' : 'valid';
+    const emailHint = formik.touched.email ? formik.errors.email : undefined;
+    const passwordValidationState =
+        formik.touched.password && Boolean(formik.errors.password) ? 'error' : 'valid';
+    const passwordHint = formik.touched.password ? formik.errors.password : undefined;
+    return (
+        <KovalForm onSubmit={formik.handleSubmit}>
+            {/* This input field displays hint below input when validation fails */}
+            <FormField label="Email" hint={emailHint}>
+                <InputText
+                    name="email"
+                    value={formik.values.email}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    validation={emailValidationState}
+                    errorMessage={formik.errors.email}
+                />
+            </FormField>
+            {/* This input field tries to display browser input error tooltip */}
+            <FormField label="Password" hint={passwordHint}>
+                <InputText
+                    name="password"
+                    value={formik.values.password}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    validation={passwordValidationState}
+                    errorMessage={formik.errors.password}
+                />
+            </FormField>
+            <div>
+                <Button type="submit">Submit</Button>
+            </div>
+        </KovalForm>
+    );
+};
+`,
+    }}
+/>

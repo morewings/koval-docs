@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "eslint.config.mjs","eslint.config.code.mjs", "**/*.mdx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "eslint.config.mjs","eslint.config.code.mjs", "**/*.mdx", "next.config.js"],
   "exclude": ["node_modules"]
 }

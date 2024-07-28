@@ -1,6 +1,6 @@
 import type {FC} from 'react';
 import {useMemo} from 'react';
-import type {SandpackFiles, SandpackOptions} from '@codesandbox/sandpack-react';
+import type {SandpackFiles} from '@codesandbox/sandpack-react';
 import {
     SandpackProvider,
     SandpackLayout,
@@ -9,20 +9,17 @@ import {
     SandpackPreview,
     SandpackConsole,
 } from '@codesandbox/sandpack-react';
-import {githubLight} from '@codesandbox/sandpack-themes';
+// import {githubLight} from '@codesandbox/sandpack-themes';
 
 import {appCode, stylesCode} from './indexCode';
-
-export type Props = {
-    files?: SandpackFiles;
-    template?: 'react' | 'react-ts' | 'nextjs' | 'vite-react' | 'vite-react-ts';
-    options?: SandpackOptions;
-};
+import type {Props} from './types';
+import classes from './Editor.module.css';
 
 export const CodeEditorFull: FC<Props> = ({
     files: filesProp = {},
     template = 'nextjs' as const,
     options: optionsProp = {},
+    dependencies = {},
 }) => {
     const files = useMemo<SandpackFiles>(
         () => ({
@@ -45,22 +42,26 @@ export const CodeEditorFull: FC<Props> = ({
     const options = useMemo(() => ({autorun: false, ...optionsProp}), [optionsProp]);
 
     return (
-        <SandpackProvider
-            files={files}
-            customSetup={{
-                dependencies: {
-                    'koval-ui': 'latest',
-                },
-            }}
-            theme={githubLight}
-            template={template}
-            options={options}>
-            <SandpackLayout>
-                <SandpackFileExplorer />
-                <SandpackCodeEditor closableTabs showTabs />
-                <SandpackPreview />
-            </SandpackLayout>
-            <SandpackConsole />
-        </SandpackProvider>
+        <div className={classes.wrapper}>
+            <SandpackProvider
+                className={classes.wrapper}
+                files={files}
+                customSetup={{
+                    dependencies: {
+                        ...dependencies,
+                        'koval-ui': 'latest',
+                    },
+                }}
+                theme="auto"
+                template={template}
+                options={options}>
+                <SandpackLayout>
+                    <SandpackFileExplorer />
+                    <SandpackCodeEditor closableTabs showTabs />
+                    <SandpackPreview />
+                </SandpackLayout>
+                <SandpackConsole />
+            </SandpackProvider>
+        </div>
     );
 };

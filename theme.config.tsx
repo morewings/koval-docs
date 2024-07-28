@@ -7,7 +7,7 @@ const config: DocsThemeConfig = {
     logo: (
         <div className={classes.wrapper}>
             <Logo />
-            <div className={classes.text}>Koval UI: User Guide</div>
+            <div className={classes.text}>Koval UI: Developer Guide</div>
         </div>
     ),
     project: {
