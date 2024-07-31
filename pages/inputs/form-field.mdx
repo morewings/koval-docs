@@ -12,7 +12,8 @@ import {CodeEditor, CodeEditorConsole} from '@/components/CodeEditor';
 
 <CodeEditorConsole
     files={{
-        'pages/index.js': `import {Form as KovalForm, InputColor, Button, FormField} from 'koval-ui';
+        'pages/index.js': `import {useCallback} from 'react';
+import {Form as KovalForm, InputText, Button, FormField} from 'koval-ui';
 export default () => {
   const handleSubmit = useCallback((event, formState) => {
     console.log('Submit event', event);
@@ -37,10 +38,9 @@ export default () => {
       onReset={handleReset}
       onChange={handleChange}>
         <FormField
-          name="color"
           label="Clickable label"
           hint="This is hint">
-          <InputColor defaultValue="#CECECE" />
+          <InputText name="text" placeholder="Example input" />
         </FormField>
         <div>
           <Button type="submit">Submit</Button>
