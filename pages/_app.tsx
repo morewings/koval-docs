@@ -12,8 +12,8 @@ export default function MyApp<TProps>({
 }) {
     return (
         <Fragment>
-            <GoogleTagManager gtmId="G-EGZMC25BG3" />
             <Component {...pageProps} />
+            <GoogleTagManager gtmId="GTM-KNHK53R3" />
             <Analytics />
         </Fragment>
     );
