@@ -1,16 +1,80 @@
 import {Callout} from 'nextra/components';
 import {Iframe} from '@/components/Iframe';
-import {CodeEditor} from '@/components/CodeEditor';
+import {CodeEditor, CodeEditorConsole} from '@/components/CodeEditor';
 
-# FormField
+# Form and FormField
+
+## Form
+
+`Form` is collection of input components containing their united value(s) state and capable of submitting this state.
+
+### Example
+
+<CodeEditorConsole
+    files={{
+        'pages/index.js': `import {Form as KovalForm, InputColor, Button, FormField} from 'koval-ui';
+export default () => {
+  const handleSubmit = useCallback((event, formState) => {
+    console.log('Submit event', event);
+    console.log('formState', formState);
+  }, [])
+  const handleInvalid = useCallback((event, formState) => {
+    console.log('Invalid event', event);
+    console.log('formState', formState);
+  }, [])
+  const handleReset = useCallback((event, formState) => {
+    console.log('Reset event', event);
+    console.log('formState', formState);
+  }, [])
+  const handleChange = useCallback((event, formState) => {
+    console.log('Change event', event);
+    console.log('formState', formState);
+  }, [])
+  return (
+    <KovalForm
+      onSubmit={handleSubmit}
+      onInvalid={handleInvalid}
+      onReset={handleReset}
+      onChange={handleChange}>
+        <FormField
+          name="color"
+          label="Clickable label"
+          hint="This is hint">
+          <InputColor defaultValue="#CECECE" />
+        </FormField>
+        <div>
+          <Button type="submit">Submit</Button>
+        </div>
+    </KovalForm>
+  );
+};
+`,
+    }}
+/>
+
+### Demo
+
+<Callout type="info" emoji="💡️">
+    Click circled **×** to open Storybook controls.
+</Callout>
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/?path=/story/inputs-form--primary&full=1&shortcuts=false&singleStory=true"
+    width={777}
+    height={777}
+    caption="Form story"
+/>
+
+## FormField
 
 The `FormField` component is designed to enhance the accessibility and usability of form inputs. It wraps a provided input element or an `InputGroup` and ensures that an accessible `label` is rendered above the input and a `hint` is displayed below it.
 
-## Example
+### Example
 
 <CodeEditor
     files={{
-        'pages/index.js': `import {FormField, InputColor} from 'koval-ui';
+        'pages/index.js': `import {useCallback} from 'react';
+import {FormField, InputColor} from 'koval-ui';
 export default function Example() {
   return (
     <FormField
@@ -24,12 +88,10 @@ export default function Example() {
     }}
 />
 
-## Demo with different inputs
+### Demo with different inputs
 
-Open Storybook Controls to see it in action.
-
-<Callout type="info" emoji="ℹ️">
-    Click circled **×** to open Storybook controls.
+<Callout type="info" emoji="💡️">
+    Open Storybook controls to see it in action.
 </Callout>
 
 <Iframe
