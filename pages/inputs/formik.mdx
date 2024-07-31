@@ -15,67 +15,92 @@ Here is example of Formik validation using [yup](https://github.com/jquense/yup)
         formik: '2.4.6',
     }}
     files={{
-        'pages/index.js': `import {Form as KovalForm, InputText, Button, FormField} from 'koval-ui';
-import {useFormik} from 'formik';
+        'pages/index.js': `import {useFormik} from 'formik';
+import {Form as KovalForm, InputText, Button, FormField, InputPassword} from 'koval-ui';
 import * as yup from 'yup';
+/**
+ * Form validation schema
+ * @see https://github.com/jquense/yup?tab=readme-ov-file#schema-basics
+ */
 const validationSchema = yup.object({
     email: yup.string().email('Enter a valid email').required('Email is required'),
     password: yup
         .string()
         .min(8, 'Password should be of minimum 8 characters length')
-        .required('Password is required')
+        .required('Password is required'),
 });
-export default function Example() {
+/**
+ * Utility function to determine the ValidationState of a form field based on its invalid and isTouched properties
+ */
+const getValidation = ({
+    invalid,
+    isTouched,
+}) => {
+    if (invalid && isTouched) {
+        // trigger an error for the input
+        return 'error';
+    } else if (!isTouched) {
+        // don't show successful validation, when input value is unchanged
+        return 'pristine';
+    }
+    // everything else considered to be successful validation
+    return 'valid';
+};
+export default () => {
     /**
      * React hook form basic setup
-     * @see https://formik.org/docs/overview
+     * @see https://react-hook-form.com/docs/useform
      */
     const formik = useFormik({
         initialValues: {
             email: 'foobar@example.com',
-            password: 'foobar'
+            password: 'foobar',
         },
         validationSchema: validationSchema,
         onSubmit: values => {
             console.log(values);
-        }
+        },
+        validateOnChange: true,
     });
-    const emailValidationState =
-        formik.touched.email && Boolean(formik.errors.email) ? 'error' : 'valid';
+    // get validation state and error message for each field
+    const emailValidationState = getValidation({
+        invalid: Boolean(formik.errors.email),
+        isTouched: formik.touched.email,
+    });
     const emailHint = formik.touched.email ? formik.errors.email : undefined;
-    const passwordValidationState =
-        formik.touched.password && Boolean(formik.errors.password) ? 'error' : 'valid';
+    const passwordValidationState = getValidation({
+        invalid: Boolean(formik.errors.password),
+        isTouched: formik.touched.password,
+    });
     const passwordHint = formik.touched.password ? formik.errors.password : undefined;
-    return (
-        <KovalForm onSubmit={formik.handleSubmit}>
-            {/* This input field displays hint below input when validation fails */}
-            <FormField label="Email" hint={emailHint}>
-                <InputText
-                    name="email"
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    validation={emailValidationState}
-                    errorMessage={formik.errors.email}
-                />
-            </FormField>
-            {/* This input field tries to display browser input error tooltip */}
-            <FormField label="Password" hint={passwordHint}>
-                <InputText
-                    name="password"
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    validation={passwordValidationState}
-                    errorMessage={formik.errors.password}
-                />
-            </FormField>
-            <div>
-                <Button type="submit">Submit</Button>
-            </div>
-        </KovalForm>
-    );
-};
+        return (
+            <KovalForm onSubmit={formik.handleSubmit}>
+                <FormField label="Email" hint={emailHint}>
+                    <InputText
+                        name="email"
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        validation={emailValidationState}
+                        errorMessage={formik.errors.email}
+                    />
+                </FormField>
+                <FormField label="Password" hint={passwordHint}>
+                    <InputPassword
+                        name="password"
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        validation={passwordValidationState}
+                        errorMessage={formik.errors.password}
+                    />
+                </FormField>
+                <div>
+                    <Button type="submit">Submit</Button>
+                </div>
+            </KovalForm>
+        );
+    };
 `,
     }}
 />

@@ -4,6 +4,7 @@
   "theme": "Theme",
   "layout": "Layout",
   "component-api": "Library Component API",
+  "icons": "Use with icons",
   "inputs": "Inputs & Forms",
   "floating-components": "Floating components",
   "storybook_link": {
