@@ -30,7 +30,8 @@ const validationSchema = yup.object({
         .required('Password is required'),
 });
 /**
- * Utility function to determine the ValidationState of a form field based on its invalid and isTouched properties
+ * Utility function to determine the ValidationState of a form field
+ * based on its invalid and isTouched properties
  */
 const getValidation = ({
     invalid,
