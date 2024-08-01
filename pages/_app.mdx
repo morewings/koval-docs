@@ -1,12 +1,12 @@
 import {Fragment} from 'react';
 import {Analytics} from '@vercel/analytics/react';
-import {GoogleTagManager} from '@next/third-parties/google';
+import {GoogleAnalytics} from '@next/third-parties/google';
 
 export default function MyApp({Component, pageProps}) {
     return (
         <Fragment>
             <Component {...pageProps} />
-            <GoogleTagManager gtmId="GTM-KNHK53R3" />
+            <GoogleAnalytics gaId="G-EGZMC25BG3" />
             <Analytics />
         </Fragment>
     );

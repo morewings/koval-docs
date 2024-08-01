@@ -1,5 +1,5 @@
+import {Callout} from 'nextra/components';
 import {CodeEditor} from '@/components/CodeEditor';
-import {Iframe} from '@/components/Iframe';
 
 # InputGroup
 
@@ -9,7 +9,14 @@ The InputGroup component is a powerful tool for managing groups of [InputCheckbo
 
 Mandatory `name` prop is applied to all child inputs. There are also optional `required` adn `disabled` props, which are applied in the same manner.
 
-## Example
+<Callout type="info" emoji="💡️">
+    For detailed examples, refer to the [Storybook
+    documentation](https://morewings.github.io/koval-ui/?path=/docs/inputs-group--docs).
+</Callout>
+
+## Example with `InputCheckbox`
+
+Allows multiple selection.
 
 <CodeEditor
     options={{editorHeight: 480, editorWidthPercentage: 60}}
@@ -38,15 +45,32 @@ export default function Example() {
     }}
 />
 
-## Demo
+## Example with `InputRadio`
 
-Open Storybook Controls to see it in action.
+Allows single selection.
 
-<Iframe
-    src="https://morewings.github.io/koval-ui/?path=/story/inputs-group--primary&full=1&shortcuts=false&singleStory=true"
-    width={777}
-    height={380}
-    caption="FormField story"
+<CodeEditor
+    options={{editorHeight: 480, editorWidthPercentage: 60}}
+    files={{
+        'pages/index.js': `import {InputGroup, InputRadio} from 'koval-ui';
+export default function Example() {
+  return (
+    <InputGroup
+      name="demo-group"
+      label="Group label"
+      hint="This is hint">
+      <InputRadio
+        value="foo"
+        label="This is a foo label" />
+      <InputRadio
+        value="bar"
+        label="This is a bar label" />
+      <InputRadio
+        value="bazz"
+        label="This is a bazz label" />
+    </InputGroup>
+  );
+};
+`,
+    }}
 />
-
-For detailed examples, refer to the [Storybook documentation](https://morewings.github.io/koval-ui/?path=/docs/inputs-group--docs).

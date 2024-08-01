@@ -1,3 +1,5 @@
+import {Callout} from 'nextra/components';
+
 # Input capture API
 
 ## Controlled and non-controlled mode
@@ -18,9 +20,7 @@ import {InputText} from 'koval-ui';
 <InputText defaultValue="Uncontrolled value" />
 ```
 
-## Textual input value props
-
-Value of each input is controlled by the following set of props.
+## Textual input callback props
 
 ```ts
 import type {InputHTMLAttributes} from 'react';
@@ -53,7 +53,10 @@ export type CallbackPropsTextual = {
 
 ## Interactive input value
 
-Note that `value` prop serves a special purpose for inputs of interactive type: when a form is submitted, only inputs which are currently checked are submitted to the server, and this is reported value.
+<Callout type="info" emoji="💡️">
+    `value` prop serves a special purpose for inputs of interactive type: when a form is submitted,
+    only inputs which are currently checked are submitted to the server, and this is reported value
+</Callout>
 
 ```ts
 import type {InputHTMLAttributes} from 'react';
@@ -82,34 +85,35 @@ export type CallbackPropsInteractive = {
 
 ## Callbacks
 
-Changes to input value and state are reported by callback functions. Each callback is similar to HTMLInputElement native callback prop.
+Callback functions report changes to input value and state.
+Each callback is similar to HTMLInputElement native callback prop.
 
 ```ts
 import type {ChangeEvent, FocusEvent, InputHTMLAttributes, KeyboardEvent} from 'react';
 
 export type CallbackProps = {
     /**
-     * Set on change callback to get Event object.
+     * Set on change callback.
      * @see https://reactjs.org/docs/events.html#form-events
      */
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     /**
-     * Set on focus callback to get Event object.
+     * Set on focus callback.
      * @see https://reactjs.org/docs/events.html#onfocus
      */
     onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
     /**
-     * Set on blur callback to get Event object.
+     * Set on blur callback.
      * @see https://reactjs.org/docs/events.html#onblur
      */
     onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
     /**
-     * Set on key down callback to get Event object.
+     * Set on key down callback.
      * @see https://reactjs.org/docs/events.html#keyboard-events
      */
     onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
     /**
-     * Set on key up callback to get Event object.
+     * Set on key up callback.
      * @see https://reactjs.org/docs/events.html#keyboard-events
      */
     onKeyUp?: (event: KeyboardEvent<HTMLInputElement>) => void;

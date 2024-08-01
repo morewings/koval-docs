@@ -1,10 +1,14 @@
+import {Callout} from 'nextra/components';
 import {Iframe} from '@/components/Iframe';
 
 # Grid layout
 
 Koval provides support for a responsive grid layout through its `Grid`, `Row`, and `Column` components.
 
-For detailed examples, refer to the [Storybook documentation](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs).
+<Callout type="info" emoji="💡️">
+    For detailed examples, refer to the [Storybook
+    documentation](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs).
+</Callout>
 
 ## Grid example
 
@@ -22,6 +26,10 @@ return (
 
 ### Demo
 
+<Callout type="warning" emoji="❗️">
+    Layout examples may display wrong at small screens.
+</Callout>
+
 <Iframe
     src="https://morewings.github.io/koval-ui/iframe.html?args=children:responsive&id=layout-grid--primary&viewMode=story"
     width={777}
@@ -36,19 +44,28 @@ The grid layout is designed to be fully responsive, ensuring that your content l
 
 `Grid` component serves as a wrapper. The grid **width** can be specified as a `number` or as `fluid` string, which sets the width to 100%. Developers can define the **number of columns** using the `base` prop, with recommended values being 12, 16, or 24. The `gap` prop allows control over the width between columns.
 
-See [all Grid props](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs#grid-props).
+<Callout type="info" emoji="💡️">
+    See [all Grid
+    props](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs#grid-props).
+</Callout>
 
 ### Row
 
 `Row` component creates horizontal section for rendering the line of content.
 
-See [all Row props](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs#row-props).
+<Callout type="info" emoji="💡️">
+    See [all Row
+    props](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs#row-props).
+</Callout>
 
 ### Col
 
 `Col` component creates grid column. Developers can configure **width** and **shift** of the column. By using predefined breakpoints and t-shirt sizes (`xs`, `sm`, `md`, `lg`, `xl`), the grid layout ensures a consistent look and feel across different screen sizes. Each of them is available as a prop which accepts number of columns or `fluid`, which indicates that column takes **all available width**.
 
-See [all Col props](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs#col-props).
+<Callout type="info" emoji="💡️">
+    See [all Col
+    props](https://morewings.github.io/koval-ui/?path=/docs/layout-grid--docs#col-props).
+</Callout>
 
 ```tsx {2,5}
 <Row>

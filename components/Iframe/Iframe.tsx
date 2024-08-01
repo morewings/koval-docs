@@ -21,7 +21,13 @@ export const Iframe: FC<Props> = ({src, height, width, caption}) => {
     return (
         <LocalRoot theme={theme}>
             <div className={classes.wrapper}>
-                <iframe className={classes.iframe} src={src} width={width} height={height} />
+                <iframe
+                    className={classes.iframe}
+                    src={src}
+                    width={width}
+                    height={height}
+                    loading="lazy"
+                />
             </div>
             {caption && <div className={classes.caption}>{caption}</div>}
         </LocalRoot>

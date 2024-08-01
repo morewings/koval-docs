@@ -1,15 +1,19 @@
+import {Callout} from 'nextra/components';
 import {CodeEditor, CodeEditorBig} from '@/components/CodeEditor';
 import {Iframe} from '@/components/Iframe';
 
 # Input validation
 
-Input validation in Koval is made through **built-in validation properties** (`required`, `pattern`, etc.) or a **validation state** (external validation result or callback function prop), which supports custom and asynchronous validation.
+Input validation in Koval is made through **built-in validation properties**
+(`required`, `pattern`, `maxLength`, `minLength`, `max`, `min`)
+or a **validation state** (external validation result or callback function prop),
+which supports custom and asynchronous validation.
 
 Koval leverages the native HTMLInputElement error API and browser-integrated error tooltips.
 
 ## Built-in validation
 
-Koval inputs support the built-in validations of HTMLInputElement: `required` and `pattern` (for textual inputs only).
+Textual inputs have these built in validation props: `required`, `maxLength`, `minLength` `pattern`.
 
 ### Textual
 
@@ -19,6 +23,7 @@ Koval inputs support the built-in validations of HTMLInputElement: `required` an
 export default function Example() {
   return (
     <InputText
+      maxLength={6}
       placeholder="Type to test"
       // email address format expected
       pattern="[^@\\s]+@[^@\\s]+"
@@ -31,6 +36,8 @@ export default function Example() {
 />
 
 ### Interactive
+
+Interactive inputs support only `required` built in validation.
 
 <CodeEditor
     files={{
@@ -51,6 +58,11 @@ export default function Example() {
 Developers can provide a `validation` prop to each input for custom validation. This prop functions as an external state or as a callback, executing each time the input value changes.
 
 ### External (aka controlled) validation
+
+<Callout type="error" emoji="❗️">
+    Don&apos;t use internal input validation (`pattern` etc) when `validation` is set to controlled
+    mode.
+</Callout>
 
 `validation` props can accept 4 external validation states: `pristine`, `valid`, `error` and `inProgress`.
 
@@ -75,6 +87,10 @@ export default function Example() {
 
 ### Custom validator function
 
+<Callout type="info" emoji="💡️">
+    Internal input validation (`pattern` etc) works normally together with validator function.
+</Callout>
+
 ```ts
 type validatorFn = (
     value: unknown,
@@ -87,7 +103,7 @@ The [ValidityState interface](https://developer.mozilla.org/en-US/docs/Web/API/V
 
 `formState` is a special object containing full form state, applicable if the input is part of a form. [FormDataEntryValue](https://udn.realityripple.com/docs/Web/API/FormDataEntryValue) represents a single value from a set of [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) key-value pairs.
 
-Validator can work in either **sync** (returns `string`) or (returns `Promise<string>`) **async** mode. An empty string ('') indicates a positive validation result, while a non-empty string produces an input error with the provided text.
+Validator can work in either **sync** (returns `string`) or (returns `Promise<string>`) **async** mode. An empty string `''` indicates a **successful** validation result, while a non-empty string produces an input **error** with the provided text.
 
 ### Sync validator
 
@@ -118,7 +134,7 @@ export default function Example() {
 
 ### Async validator
 
-Useful for server-side data validation. Executes with a 1000ms debounce delay.
+Useful for server-side data validation. Runs with a 1000ms debounced delay.
 
 ```tsx
 import {InputText} from 'koval-ui';
@@ -161,7 +177,9 @@ const validatorFn = (value: unknown, validityState: ValidityState) => {
 
 ## Use complex validation
 
-It's possible to make input validation result to be dependent on other field value(s) belonging to the same form. Enable `revalidateOnFormChange` prop and use `formState` parameter inside `validatorFn`.
+It is possible to make input validation result
+to be dependent on other field value belonging to the same form.
+Enable `revalidateOnFormChange` prop and use `formState` parameter inside `validatorFn`.
 
 <CodeEditorBig
     files={{
