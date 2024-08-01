@@ -127,6 +127,7 @@ export default [
         }),
         rules: {
             ...mdx.flatCodeBlocks.rules,
+            'react/prop-types': 'off',
             'prettier/prettier': [
                 'error',
                 {
