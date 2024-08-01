@@ -1,12 +1,16 @@
+import {Callout} from 'nextra/components';
 import {CodeEditorBig} from '@/components/CodeEditor';
 
 # Use with React Hook Form
 
-[React Hook Form](https://react-hook-form.com/) is a popular package developers use to validate forms. Koval UI input and form API is compatible with this package.
+<Callout type="info" emoji="💡️">
+    [React Hook Form](https://react-hook-form.com/) is a popular package developers use to validate
+    forms. Koval UI input and form API is compatible with this package.
+</Callout>
 
 ## Validate field
 
-Here is example of a single field validation.
+Example of a single field validation.
 
 <CodeEditorBig
     options={{editorHeight: 666}}
@@ -82,7 +86,7 @@ export default () => {
 
 ## Validate state with schema
 
-React hook form is capable of doing complex schema based validations. Here is example using [yup](https://github.com/jquense/yup) package.
+React hook form is capable of doing complex schema-based validations. Here is an example using [yup](https://github.com/jquense/yup).
 
 <CodeEditorBig
     options={{editorHeight: 666}}
