@@ -24,8 +24,8 @@ importers:
         specifier: 0.7.9
         version: 0.7.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       koval-ui:
-        specifier: 0.12.23
-        version: 0.12.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.14.1
+        version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next:
         specifier: 14.2.5
         version: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -375,8 +375,8 @@ packages:
   '@lezer/lr@1.4.2':
     resolution: {integrity: sha512-pu0K1jCIdnQ12aWNaAVU5bzi7Bd1w54J3ECgANPmYLtQKP0HBj2cE/5coBD66MT10xbtIuUr7tg0Shbsvk0mDA==}
 
-  '@material-symbols/svg-700@0.20.0':
-    resolution: {integrity: sha512-WZ5EeFR0oG54FvuMbmlDnvKRokpXW+sBxZzl2iHToMKN1jD8HQbSWuYLGzWnqtTz0ASHz2cJpsZRDRRITQoAWw==}
+  '@material-symbols/svg-700@0.21.2':
+    resolution: {integrity: sha512-bzpMcrz4rmQ7gd7/psrvhRIcbTSu+o2/x4JZDc2uekCG8Y3N2T+ak3/bmdpgVSAAu6CIPrYwNhFPHWqXIbwinw==}
 
   '@mdx-js/mdx@2.3.0':
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
@@ -2071,8 +2071,8 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
-  koval-ui@0.12.23:
-    resolution: {integrity: sha512-YlgA8VJv/xAIyD8Vn+kLjuSW6VyVpCkHovOO293MHLYF8hTnPbA/DXoygaepT+5Wqdbo4MUbcBkxMnHXCnx/EQ==}
+  koval-ui@0.14.1:
+    resolution: {integrity: sha512-xIF7UlE074PFuiv2/FUP8TbBifuk/L7B1VW5fhg32Jt4+oQF5Dsh7tHCLhcmopf9kMBpQB422Mm44/FOJl1SZw==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -2742,6 +2742,9 @@ packages:
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
+  property-expr@2.0.6:
+    resolution: {integrity: sha512-SVtmxhRE/CGkn3eZY1T6pC8Nln6Fr/lu1mKSgRud0eC73whjGfoAogbn78LkD8aFL0zz3bAFerKSnOl7NlErBA==}
+
   property-information@6.2.0:
     resolution: {integrity: sha512-kma4U7AFCTwpqq5twzC1YVIDXSqg6qQK6JN0smOw8fgRy1OkMi0CYSzFmsy6dnqSenamAtj0CyXMUJ1Mf6oROg==}
 
@@ -3136,6 +3139,9 @@ packages:
   third-party-capital@1.0.20:
     resolution: {integrity: sha512-oB7yIimd8SuGptespDAZnNkzIz+NWaJCu2RMsbs4Wmp9zSDUM8Nhi3s2OOcqYuv3mN4hitXc8DVx+LyUmbUDiA==}
 
+  tiny-case@1.0.3:
+    resolution: {integrity: sha512-Eet/eeMhkO6TX8mnUteS9zgPbUMQa4I6Kkp5ORiBD5476/m+PIRiumP5tmh5ioJpH7k51Kehawy2UDfsnxxY8Q==}
+
   title@3.5.3:
     resolution: {integrity: sha512-20JyowYglSEeCvZv3EZ0nZ046vLarO37prvV0mbtQV7C8DJPGgN967r8SJkqd3XK3K3lD3/Iyfp3avjfil8Q2Q==}
     hasBin: true
@@ -3147,6 +3153,9 @@ packages:
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
+
+  toposort@2.0.2:
+    resolution: {integrity: sha512-0a5EOkAUp8D4moMi2W8ZF8jcga7BgZd91O/yabJCFY8az+XSzeGyTKs0Aoo897iV1Nj6guFq8orWDS96z91oGg==}
 
   trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
@@ -3177,6 +3186,10 @@ packages:
   type-fest@1.4.0:
     resolution: {integrity: sha512-yGSza74xk0UG8k+pLh5oeoYirvIiWo5t0/o3zHHAO2tRDiZcxWP7fywNlXhqb6/r6sWvwi+RsyQMWhVLe4BVuA==}
     engines: {node: '>=10'}
+
+  type-fest@2.19.0:
+    resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
+    engines: {node: '>=12.20'}
 
   type-fest@3.13.1:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
@@ -3414,6 +3427,9 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  yup@1.4.0:
+    resolution: {integrity: sha512-wPbgkJRCqIf+OHyiTBQoJiP5PFuAXaWiJK6AmYkzQAh5/c2K9hzSApBZG5wV9KoKSePF7sAxmNSvh/13YHkFDg==}
 
   zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
@@ -3736,7 +3752,7 @@ snapshots:
     dependencies:
       '@lezer/common': 1.2.1
 
-  '@material-symbols/svg-700@0.20.0': {}
+  '@material-symbols/svg-700@0.21.2': {}
 
   '@mdx-js/mdx@2.3.0':
     dependencies:
@@ -5620,16 +5636,17 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  koval-ui@0.12.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  koval-ui@0.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@floating-ui/react-dom': 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@material-symbols/svg-700': 0.20.0
+      '@material-symbols/svg-700': 0.21.2
       awesome-debounce-promise: 2.1.0
       classnames: 2.5.1
       css-vars-hook: 0.7.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       the-new-css-reset: 1.11.2
+      yup: 1.4.0
 
   layout-base@1.0.2: {}
 
@@ -6839,6 +6856,8 @@ snapshots:
       object-assign: 4.1.1
       react-is: 16.13.1
 
+  property-expr@2.0.6: {}
+
   property-information@6.2.0: {}
 
   protocols@2.0.1: {}
@@ -7314,6 +7333,8 @@ snapshots:
 
   third-party-capital@1.0.20: {}
 
+  tiny-case@1.0.3: {}
+
   title@3.5.3:
     dependencies:
       arg: 1.0.0
@@ -7326,6 +7347,8 @@ snapshots:
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
+
+  toposort@2.0.2: {}
 
   trim-lines@3.0.1: {}
 
@@ -7351,6 +7374,8 @@ snapshots:
       prelude-ls: 1.2.1
 
   type-fest@1.4.0: {}
+
+  type-fest@2.19.0: {}
 
   type-fest@3.13.1: {}
 
@@ -7714,6 +7739,13 @@ snapshots:
   yaml@2.4.5: {}
 
   yocto-queue@0.1.0: {}
+
+  yup@1.4.0:
+    dependencies:
+      property-expr: 2.0.6
+      tiny-case: 1.0.3
+      toposort: 2.0.2
+      type-fest: 2.19.0
 
   zod@3.23.8: {}
 
