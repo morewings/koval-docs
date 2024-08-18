@@ -4,11 +4,12 @@
   "theme": "Theme",
   "layout": "Layout",
   "component-api": "Library Component API",
-  "icons": "Use with icons",
+  "icons": "Prefix and suffix icons",
+  "iframe": "Iframe embed",
   "inputs": "Inputs & Forms",
   "floating-components": "Floating components",
   "storybook_link": {
-    "title": "Storybook ↗",
+    "title": "View all components ↗",
     "href": "https://morewings.github.io/koval-ui/",
     "newWindow": true
   },

@@ -12,11 +12,12 @@ import {appCode, stylesCode} from './indexCode';
 import classes from './Editor.module.css';
 import type {Props} from './types';
 
-export const CodeEditorBig: FC<Props> = ({
+export const CodeEditorBig: FC<Props & {previewHeight: number}> = ({
     files: filesProp = {},
     template = 'nextjs' as const,
     options: optionsProp = {},
     dependencies = {},
+    previewHeight,
 }) => {
     const files = useMemo<SandpackFiles>(
         () => ({
@@ -53,7 +54,7 @@ export const CodeEditorBig: FC<Props> = ({
                 options={options}>
                 <SandpackCodeEditor className={classes.editor} showLineNumbers />
                 <SandpackLayout>
-                    <SandpackPreview showNavigator />
+                    <SandpackPreview showNavigator style={{height: previewHeight}} />
                 </SandpackLayout>
             </SandpackProvider>
         </div>

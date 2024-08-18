@@ -1,3 +1,51 @@
-# Use with icons
+import {CodeEditor} from '@/components/CodeEditor';
+import {Callout} from 'nextra/components';
 
-Tba
+# Prefix and suffix icons
+
+[Button](https://morewings.github.io/koval-ui/?path=/docs/components-button--docs) and [various input components](https://koval.support/inputs/inputs) support `prefix` and `suffix` props, which can be used to extend your component with icon.
+
+Koval UI expect prefix React component which is compatible with `SVGProps<SVGSVGElement>` type.
+SVG style has to support [currentColor](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentcolor_keyword) keyword.
+
+<Callout type="info" emoji="💡️">
+    Most React icon libraries support this format. Check for example:
+    [react-icons](https://www.npmjs.com/package/react-icons),
+    [material-icons](https://mui.com/material-ui/material-icons/),
+    [heroicons](https://heroicons.com/) etc.
+</Callout>
+
+## Demo
+
+<CodeEditor
+    options={{editorHeight: 555}}
+    dependencies={{
+        'react-icons': '5.3.0',
+    }}
+    files={{
+        'pages/index.js': `import {
+    HiBeaker,
+    HiAcademicCap
+} from 'react-icons/hi';
+import {Button, InputText} from 'koval-ui';
+export default function Example() {
+  return (
+    <div style={{
+        display: 'flex',
+        gap: '24px',
+        flexDirection: 'column'
+    }}>
+      <Button
+          prefix={HiBeaker}
+          suffix={HiAcademicCap}>
+          Button with icon
+      </Button>
+      <InputText
+          prefix={HiBeaker}
+          placeholder="Input with icon" />
+    </div>
+  );
+};
+`,
+    }}
+/>
