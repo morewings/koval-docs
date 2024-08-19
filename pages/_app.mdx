@@ -1,15 +1,13 @@
+import {Fragment} from 'react';
 import {Analytics} from '@vercel/analytics/react';
 import {GoogleAnalytics} from '@next/third-parties/google';
-import PiwikProProvider from '@piwikpro/next-piwik-pro';
 
 export default function MyApp({Component, pageProps}) {
     return (
-        <PiwikProProvider
-            containerId="ef6913b4-7d2d-4c45-b644-a940009072fe"
-            containerUrl="https://koval.piwik.pro">
+        <Fragment>
             <Component {...pageProps} />
             <GoogleAnalytics gaId="G-EGZMC25BG3" />
             <Analytics />
-        </PiwikProProvider>
+        </Fragment>
     );
 }
