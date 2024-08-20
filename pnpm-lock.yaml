@@ -48,9 +48,6 @@ importers:
       '@eslint/js':
         specifier: 9.9.0
         version: 9.9.0
-      '@piwikpro/next-piwik-pro':
-        specifier: 3.1.1
-        version: 3.1.1(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/node':
         specifier: 20.14.13
         version: 20.14.13
@@ -555,23 +552,6 @@ packages:
 
   '@open-draft/deferred-promise@2.2.0':
     resolution: {integrity: sha512-CecwLWx3rhxVQF6V4bAgPS5t+So2sTbPgAzafKkVizyi7tlwpcFpdFqq+wqF2OwNBmqFuu6tOyouTuxgpMfzmA==}
-
-  '@piwikpro/next-piwik-pro@3.1.1':
-    resolution: {integrity: sha512-nKsd/Vj7DabcrJbJ50Qv8AerIlvzg2eTppnOqk7IAustnX7iCAxXfbWAY/C+9tOhpyu52j5wKCwWns767mXuCg==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      next: '>=13.0.0 <15.0.0'
-
-  '@piwikpro/react-piwik-pro@2.1.1':
-    resolution: {integrity: sha512-orb861m9jqlfogK0Jxz61mHyKYlQ8nolyB+fZ/XwAMtxHRaBTjPM/pF+NxjT9zYaa4O+qW8Zm4Ypyy/zpyJ0Lg==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-
-  '@piwikpro/tracking-base-library@1.2.0':
-    resolution: {integrity: sha512-D3F29v0D77vPHGeVognfLYWrP/K6SfnukWERelxsiduFuRWPbKagMLqMxsxnw81QURhSy/CngAmjPBAM1jXAjg==}
-    engines: {node: '>=18.0.0'}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -3914,22 +3894,6 @@ snapshots:
   '@npmcli/name-from-folder@2.0.0': {}
 
   '@open-draft/deferred-promise@2.2.0': {}
-
-  '@piwikpro/next-piwik-pro@3.1.1(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@piwikpro/react-piwik-pro': 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      next: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-    transitivePeerDependencies:
-      - react
-      - react-dom
-
-  '@piwikpro/react-piwik-pro@2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@piwikpro/tracking-base-library': 1.2.0
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
-  '@piwikpro/tracking-base-library@1.2.0': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true

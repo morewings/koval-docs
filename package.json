@@ -40,7 +40,6 @@
   "devDependencies": {
     "@eslint/compat": "1.1.1",
     "@eslint/js": "9.9.0",
-    "@piwikpro/next-piwik-pro": "3.1.1",
     "@types/node": "20.14.13",
     "@typescript-eslint/eslint-plugin": "8.0.0",
     "@typescript-eslint/parser": "8.0.0",

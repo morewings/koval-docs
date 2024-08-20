@@ -2,7 +2,6 @@
 const withNextra = require('nextra')({
     theme: 'nextra-theme-docs',
     themeConfig: './theme.config.tsx',
-    transpilePackages: ['@piwikpro/next-piwik-pro'],
 });
 
 // eslint-disable-next-line no-undef
