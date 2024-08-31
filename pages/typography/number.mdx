@@ -8,9 +8,23 @@ Koval ensures consistent number formatting that respects the selected locale. It
 -   `NumberDecimal`: Formats and displays the provided `value` according to the **locale**.
 -   `NumberPercent`: Formats and displays provided `value` as a **percentage**.
 -   `NumberCurrency`: Formats and displays provided `value` as a **currency string**, appending the specified currency type.
--   `NumberUnit` component formats and displays provided `value`, appending the localized unit name.
+-   `NumberUnit`: Formats and displays provided `value`, appending the localized unit name.
 
 Each component applies consistent grouping separators based on the selected language standard. This feature is optional and can be disabled using the `grouping` prop.
+
+## Imports & example
+
+```tsx
+import {NumberDecimal, NumberPercent, NumberCurrency, NumberUnit} from 'koval-ui';
+
+const Decimal = () => <NumberDecimal value={123.456} />;
+
+const Percent = () => <NumberPercent value={0.123} />;
+
+const Currency = () => <NumberCurrency value={-123456.789} currency="EUR" />;
+
+const Unit = () => <NumberUnit value={123456.789} unit="petabyte" />;
+```
 
 ## `NumberDecimal`
 

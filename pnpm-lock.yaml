@@ -24,8 +24,8 @@ importers:
         specifier: 0.7.9
         version: 0.7.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       koval-ui:
-        specifier: 0.14.1
-        version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.15.8
+        version: 0.15.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next:
         specifier: 14.2.5
         version: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -379,8 +379,8 @@ packages:
   '@lezer/lr@1.4.2':
     resolution: {integrity: sha512-pu0K1jCIdnQ12aWNaAVU5bzi7Bd1w54J3ECgANPmYLtQKP0HBj2cE/5coBD66MT10xbtIuUr7tg0Shbsvk0mDA==}
 
-  '@material-symbols/svg-700@0.21.2':
-    resolution: {integrity: sha512-bzpMcrz4rmQ7gd7/psrvhRIcbTSu+o2/x4JZDc2uekCG8Y3N2T+ak3/bmdpgVSAAu6CIPrYwNhFPHWqXIbwinw==}
+  '@material-symbols/svg-700@0.22.2':
+    resolution: {integrity: sha512-bpQhbOMFRKqXOOAl9Gly/Hz0fezEZDhPvVZVOvZaADnefVIB5xT6fbCyVFv8DC+781VD0daZtnFQ2T/Gm2CC+g==}
 
   '@mdx-js/mdx@2.3.0':
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
@@ -2070,8 +2070,8 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
-  koval-ui@0.14.1:
-    resolution: {integrity: sha512-xIF7UlE074PFuiv2/FUP8TbBifuk/L7B1VW5fhg32Jt4+oQF5Dsh7tHCLhcmopf9kMBpQB422Mm44/FOJl1SZw==}
+  koval-ui@0.15.8:
+    resolution: {integrity: sha512-ZarjI+2HnvzBn0mIHV/ICL2v5OCCN+7CBdZ24p+H3qlvT9LoXvEjNnU7HrVfCnX8c8TVLwJ6BXuRw+h9pO+2JA==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -3309,6 +3309,12 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
+  use-debounce@10.0.3:
+    resolution: {integrity: sha512-DxQSI9ZKso689WM1mjgGU3ozcxU1TJElBJ3X6S4SMzMNcm2lVH0AHmyXB+K7ewjz2BSUKJTDqTcwtSMRfB89dg==}
+    engines: {node: '>= 16.0.0'}
+    peerDependencies:
+      react: '*'
+
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
@@ -3747,7 +3753,7 @@ snapshots:
     dependencies:
       '@lezer/common': 1.2.1
 
-  '@material-symbols/svg-700@0.21.2': {}
+  '@material-symbols/svg-700@0.22.2': {}
 
   '@mdx-js/mdx@2.3.0':
     dependencies:
@@ -5627,16 +5633,17 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  koval-ui@0.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  koval-ui@0.15.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@floating-ui/react-dom': 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@material-symbols/svg-700': 0.21.2
+      '@material-symbols/svg-700': 0.22.2
       awesome-debounce-promise: 2.1.0
       classnames: 2.5.1
       css-vars-hook: 0.7.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       the-new-css-reset: 1.11.2
+      use-debounce: 10.0.3(react@18.3.1)
       yup: 1.4.0
 
   layout-base@1.0.2: {}
@@ -7573,6 +7580,10 @@ snapshots:
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
+
+  use-debounce@10.0.3(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   util-deprecate@1.0.2: {}
 
