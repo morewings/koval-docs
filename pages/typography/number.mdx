@@ -1,0 +1,89 @@
+import {Callout} from 'nextra/components';
+import {Iframe} from '@/components/Iframe';
+
+# Consistent and locale-aware number formatting
+
+Koval ensures consistent number formatting that respects the selected locale. It offers four distinct components for number formatting:
+
+-   `NumberDecimal`: Formats and displays the provided `value` according to the **locale**.
+-   `NumberPercent`: Formats and displays provided `value` as a **percentage**.
+-   `NumberCurrency`: Formats and displays provided `value` as a **currency string**, appending the specified currency type.
+-   `NumberUnit` component formats and displays provided `value`, appending the localized unit name.
+
+Each component applies consistent grouping separators based on the selected language standard. This feature is optional and can be disabled using the `grouping` prop.
+
+## `NumberDecimal`
+
+The NumberDecimal component is used to format any numeric value. It supports various notations, including `scientific` and `engineering`.
+
+<Callout type="info" emoji="💡️">
+    See [NumberDecimal
+    story](https://morewings.github.io/koval-ui/?path=/docs/typography-number-decimal--docs).
+</Callout>
+
+### Demo
+
+<Callout type="warning" emoji="👇️">
+    Click close icon on right side to see props controls
+</Callout>
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/?path=/story/typography-number-decimal--primary&full=1&shortcuts=false&singleStory=true"
+    width={777}
+    height={333}
+    caption="NumberDecimal demo & playground"
+/>
+
+## `NumberPercent`
+
+The `NumberPercent` component formats the value as a percentage by multiplying it by 100.
+
+<Callout type="info" emoji="💡️">
+    See [NumberPercent
+    story](https://morewings.github.io/koval-ui/?path=/docs/typography-number-percent--docs).
+</Callout>
+
+### Demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/?path=/story/typography-number-percent--primary&full=1&shortcuts=false&singleStory=true"
+    width={777}
+    height={333}
+    caption="NumberPercent demo & playground"
+/>
+
+## `NumberCurrency`
+
+The `NumberCurrency` component displays the value in a conventional **currency string format**, appending the **ISO 4217** currency code, localized name, or symbol. This is particularly useful for displaying financial information.
+
+<Callout type="info" emoji="💡️">
+    See [NumberCurrency
+    story](https://morewings.github.io/koval-ui/?path=/docs/typography-number-currency--docs).
+</Callout>
+
+### Demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/?path=/story/typography-number-currency--primary&full=1&shortcuts=false&singleStory=true"
+    width={777}
+    height={333}
+    caption="NumberCurrency demo & playground"
+/>
+
+## `NumberUnit`
+
+The `NumberUnit` component is used for displaying numeric information about entities. It appends one of the [ECMA standard-supported units](https://tc39.es/ecma402/#table-sanctioned-single-unit-identifiers). The component supports different notations, such as `scientific` and `engineering`, and the unit display can be set to `short`, `long`, or `narrow` localized variants.
+
+<Callout type="info" emoji="💡️">
+    See [NumberUnit
+    story](https://morewings.github.io/koval-ui/?path=/docs/typography-number-unit--docs).
+</Callout>
+
+### Demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/?path=/story/typography-number-unit--primary&full=1&shortcuts=false&singleStory=true"
+    width={777}
+    height={333}
+    caption="NumberUnit demo & playground"
+/>

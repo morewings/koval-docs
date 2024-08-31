@@ -1,0 +1,178 @@
+import {Callout} from 'nextra/components';
+import {Iframe} from '@/components/Iframe';
+
+# Typography components and recipes
+
+Koval UI offers a suite of components designed to ensure typography consistency and harmony across various text elements, including paragraphs, headers, lists, numbers, and tables.
+
+<Callout type="info" emoji="💡️">
+    You can find all Koval typography components at the corresponding [Storybook
+    chapter](https://morewings.github.io/koval-ui/?path=/docs/typography-intro--docs).
+</Callout>
+
+## Create a clean text flow
+
+### Paragraph
+
+The Paragraph (`P`) component provides a uniform style based on the `HTMLParagraphElement`.
+
+#### Import name
+
+```typescript
+import {P} from 'koval-ui';
+```
+
+<Callout type="info" emoji="💡️">
+    See [Paragraph
+    story](https://morewings.github.io/koval-ui/?path=/docs/typography-paragraph--docs).
+</Callout>
+
+#### Demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=&id=typography-paragraph--primary&viewMode=story"
+    width={777}
+    height={333}
+    caption="Paragraph demo"
+/>
+
+### Headers
+
+Koval UI supports six header sizes, from `H1` to `H6`, allowing for flexible and consistent heading structures.
+
+#### Import name
+
+```typescript
+import {H1, H2, H3, H4, H5, H6} from 'koval-ui';
+```
+
+<Callout type="info" emoji="💡️">
+    See [Headers
+    story](https://morewings.github.io/koval-ui/iframe.html?args=&id=typography-header--primary&viewMode=story).
+</Callout>
+
+#### Demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=&id=typography-header--primary&viewMode=story"
+    width={777}
+    height={333}
+    caption="Headers demo"
+/>
+
+### Inline elements
+
+Koval UI provides consistent styling for various HTML inline elements, such as `a`, `small`, `sup` and so on.
+
+#### Import names
+
+```typescript
+import {A, Strong, Sup, Sub, Small, B, Mark, Ins, I, Em, Del, Kbd, Code, S} from 'koval-ui';
+```
+
+<Callout type="info" emoji="💡️">
+    See [Inline elements
+    story](https://morewings.github.io/koval-ui/?path=/docs/typography-inline-elements--docs).
+</Callout>
+
+#### Demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=&id=typography-inline-elements--primary&viewMode=story"
+    width={777}
+    height={333}
+    caption="Inline elements demo"
+/>
+
+### Lists
+
+Three types of list formatting are available:
+
+-   **Ordered** lists (`Ol`)
+-   **Unordered** Lists (`Ul`)
+-   **Description** Lists (`Dl`)
+
+<Callout type="info" emoji="💡️">
+    See [Lists story](https://morewings.github.io/koval-ui/?path=/docs/typography-lists--docs).
+</Callout>
+
+#### Import name and example
+
+Each component is implemented as wrapper for `HTMLLIElements`.
+
+```tsx
+import {Ol, Ul, Dl} from 'koval-ui';
+
+const Ordered = () => (
+    <Ol>
+        <li>Ordered item 1</li>
+        <li>Ordered item 2</li>
+        <li>Ordered item 3</li>
+    </Ol>
+);
+
+const Unordered = () => (
+    <Ul>
+        <li>Unordered item 1</li>
+        <li>Unordered item 2</li>
+        <li>Unordered item 3</li>
+    </Ul>
+);
+
+const Description = () => (
+    <Ul>
+        <dt>Item title 1</dt>
+        <dd>Item description 1</dd>
+        <dt>Item title 2</dt>
+        <dd>Item description 2</dd>
+        <dt>Item title 3</dt>
+        <dd>Item description 3</dd>
+    </Ul>
+);
+```
+
+#### Demo
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=&id=typography-lists--ordered&viewMode=story"
+    width={777}
+    height={333}
+    caption="Ordered list demo"
+/>
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=&id=typography-lists--unordered&viewMode=story"
+    width={777}
+    height={333}
+    caption="Unordered list demo"
+/>
+
+<Iframe
+    src="https://morewings.github.io/koval-ui/iframe.html?args=&id=typography-lists--description&viewMode=story"
+    width={777}
+    height={333}
+    caption="Description list demo"
+/>
+
+### Table
+
+A basic Table component is available, serving as a wrapper for standard HTML table elements such as `tr`, `td`, and others.
+
+<Callout type="info" emoji="💡️">
+    See [Table story](https://morewings.github.io/koval-ui/?path=/docs/typography-table--docs).
+</Callout>
+
+#### Import name
+
+```typescript
+import {Table} from 'koval-ui';
+```
+
+#### Demo
+
+<Iframe
+    src="http://localhost:6006/iframe.html?args=&id=typography-table--responsive&viewMode=story"
+    width={777}
+    height={555}
+    caption="Responsive table demo"
+/>

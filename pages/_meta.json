@@ -2,10 +2,11 @@
   "index": "Introduction",
   "quickstart": "Quick Start",
   "theme": "Theme",
-  "layout": "Layout",
   "component-api": "Library Component API",
+  "layout": "Layout",
   "icons": "Prefix and suffix icons",
   "iframe": "Iframe embed",
+  "typography": "Typography",
   "inputs": "Inputs & Forms",
   "floating-components": "Floating components",
   "storybook_link": {
