@@ -1,5 +1,6 @@
 {
   "components": "Components & recipes",
-  "text": "HTML text formatting",
-  "number": "Number formatting"
+  "text": "Arbitrary HTML text formatting",
+  "number": "Number formatting",
+  "date": "Date & time formatting"
 }

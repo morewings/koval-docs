@@ -24,8 +24,8 @@ importers:
         specifier: 0.7.9
         version: 0.7.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       koval-ui:
-        specifier: 0.15.8
-        version: 0.15.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.15.9
+        version: 0.15.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next:
         specifier: 14.2.5
         version: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2070,8 +2070,8 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
-  koval-ui@0.15.8:
-    resolution: {integrity: sha512-ZarjI+2HnvzBn0mIHV/ICL2v5OCCN+7CBdZ24p+H3qlvT9LoXvEjNnU7HrVfCnX8c8TVLwJ6BXuRw+h9pO+2JA==}
+  koval-ui@0.15.9:
+    resolution: {integrity: sha512-e5aD6ZKduAouGWsQ2fkdqkVEjv5B27AxFgRqvwu2C/rxnRKVE5cP6SHWJENDZiWynIGFBVUFPNxauZNAuOlzKQ==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -5633,7 +5633,7 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  koval-ui@0.15.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  koval-ui@0.15.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@floating-ui/react-dom': 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@material-symbols/svg-700': 0.22.2
