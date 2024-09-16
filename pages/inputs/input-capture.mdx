@@ -54,7 +54,10 @@ export type CallbackPropsTextual = {
 ## Interactive input value
 
 <Callout type="info" emoji="💡️">
-    `value` prop serves a special purpose for [inputs of interactive type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#additional_attributes): when a form is submitted, only inputs which are currently checked are submitted to the server, and this is reported value.
+    `value` prop serves a special purpose for [inputs of interactive
+    type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#additional_attributes):
+    when a form is submitted, only inputs which are currently checked are submitted to the server,
+    and this is reported value.
 </Callout>
 
 ```ts
@@ -63,7 +66,7 @@ import type {InputHTMLAttributes} from 'react';
 export type CallbackPropsInteractive = {
     /**
      * Provide value CheckboxInput.
-     * NB! This prop is unlike TextInput and doesn't influence a state of input! 
+     * NB! This prop is unlike TextInput and doesn't influence a state of input!
      * Use `checked` prop for that.
      */
     value?: InputHTMLAttributes<HTMLInputElement>['value'];
