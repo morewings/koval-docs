@@ -54,7 +54,7 @@
     "is-ci": "3.0.1",
     "lint-staged": "15.2.10",
     "next-sitemap": "4.2.3",
-    "npm-run-all2": "6.2.2",
+    "npm-run-all2": "6.2.3",
     "prettier": "3.3.3",
     "sharp": "0.33.4",
     "typescript": "5.5.4",
