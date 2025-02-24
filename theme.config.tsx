@@ -1,9 +1,7 @@
-import type {DocsThemeConfig} from 'nextra-theme-docs';
-
 import {Logo} from '@/components/Logo';
 import classes from '@/components/Logo/Logo.module.css';
 
-const config: DocsThemeConfig = {
+const config = {
     logo: (
         <div className={classes.wrapper}>
             <Logo />
@@ -16,11 +14,6 @@ const config: DocsThemeConfig = {
     docsRepositoryBase: 'https://github.com/morewings/koval-docs/blob/master',
     footer: {
         text: 'React components collection: Koval UI',
-    },
-    useNextSeoProps() {
-        return {
-            titleTemplate: '%s – Koval UI',
-        };
     },
     head: (
         <>
