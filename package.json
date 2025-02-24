@@ -32,8 +32,8 @@
     "css-vars-hook": "0.7.9",
     "koval-ui": "0.18.1",
     "next": "15.1.7",
-    "nextra": "3.3.1",
-    "nextra-theme-docs": "3.3.1",
+    "nextra": "4.2.13",
+    "nextra-theme-docs": "4.2.13",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
