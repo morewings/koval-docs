@@ -39,11 +39,11 @@
   },
   "devDependencies": {
     "@eslint/compat": "1.2.7",
-    "@eslint/js": "9.18.0",
+    "@eslint/js": "9.21.0",
     "@types/node": "20.17.19",
     "@typescript-eslint/eslint-plugin": "8.20.0",
     "@typescript-eslint/parser": "8.20.0",
-    "eslint": "9.18.0",
+    "eslint": "9.21.0",
     "eslint-config-prettier": "10.0.1",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-mdx": "3.1.5",
