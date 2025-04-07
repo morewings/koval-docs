@@ -1,7 +1,7 @@
 export const indexCode = `import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import {Provider} from 'koval-ui';
-import 'koval-ui/dist/style.css';
+import 'koval-ui/dist/index.css';
 import "./styles.css";
 import App from "./App";
 const root = createRoot(document.getElementById("root"));
@@ -16,7 +16,7 @@ root.render(
 );`;
 
 export const appCode = `import {Provider} from 'koval-ui';
-import 'koval-ui/dist/style.css';
+import 'koval-ui/dist/index.css';
 import '../styles.css';
 export default function MyApp({ Component, pageProps }) {
   return <div className="wrapper"><Provider><Component {...pageProps} /></Provider></div>
