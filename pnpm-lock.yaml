@@ -24,8 +24,8 @@ importers:
         specifier: 0.7.9
         version: 0.7.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       koval-ui:
-        specifier: 0.18.1
-        version: 0.18.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.19.0
+        version: 0.19.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       next:
         specifier: 15.1.7
         version: 15.1.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -427,8 +427,8 @@ packages:
   '@lezer/lr@1.4.2':
     resolution: {integrity: sha512-pu0K1jCIdnQ12aWNaAVU5bzi7Bd1w54J3ECgANPmYLtQKP0HBj2cE/5coBD66MT10xbtIuUr7tg0Shbsvk0mDA==}
 
-  '@material-symbols/svg-700@0.28.2':
-    resolution: {integrity: sha512-R02PisGtrvoCpsdukSghz/S9tXqS3L5Uw96pEvDs+P45LvYVzY20plFMRtXFmP8n3OHj/KfjhU0bdRchOeSC0A==}
+  '@material-symbols/svg-700@0.29.3':
+    resolution: {integrity: sha512-8+WUf6R3lys5pqwWwL1cwgsMiBumyhms4IqZ9TeqVGcxFPyFYTmOsNFdu4LdU73TLKQeB/fqUZOROFA5PdyZZg==}
 
   '@mdx-js/mdx@3.1.0':
     resolution: {integrity: sha512-/QxEhPAvGwbQmy1Px8F899L5Uc2KZ6JtXwlCgJmjSTBedwOZkByYcBG4GceIGPXRDsmfxhHazuS+hlOShRLeDw==}
@@ -697,12 +697,6 @@ packages:
       react: '>=16.8'
       react-dom: '>=16.8'
 
-  '@tanstack/react-virtual@3.10.7':
-    resolution: {integrity: sha512-yeP+M0G8D+15ZFPivpuQ5hoM4Fa/PzERBx8P8EGcfEsXX3JOb9G9UUrqc47ZXAxvK+YqzM9T5qlJUYUFOwCZJw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-
   '@tanstack/react-virtual@3.13.0':
     resolution: {integrity: sha512-CchF0NlLIowiM2GxtsoKBkXA4uqSnY2KvnXo+kyUFD4a4ll6+J0qzoRsUPMwXV/H26lRsxgJIr/YmjYum2oEjg==}
     peerDependencies:
@@ -712,9 +706,6 @@ packages:
   '@tanstack/table-core@8.21.2':
     resolution: {integrity: sha512-uvXk/U4cBiFMxt+p9/G7yUWI/UbHYbyghLCjlpWZ3mLeIZiUBSKcUnw9UnKkdRz7Z/N4UBuFLWQdJCjUe7HjvA==}
     engines: {node: '>=12'}
-
-  '@tanstack/virtual-core@3.10.7':
-    resolution: {integrity: sha512-ND5dfsU0n9F4gROzwNNDJmg6y8n9pI8YWxtgbfJ5UcNn7Hx+MxEXtXcQ189tS7sh8pmCObgz2qSiyRKTZxT4dg==}
 
   '@tanstack/virtual-core@3.13.0':
     resolution: {integrity: sha512-NBKJP3OIdmZY3COJdWkSonr50FMVIi+aj5ZJ7hI/DTpEKg2RMfo/KvP8A3B/zOSpMgIe52B5E2yn7rryULzA6g==}
@@ -2466,8 +2457,8 @@ packages:
   kolorist@1.8.0:
     resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
 
-  koval-ui@0.18.1:
-    resolution: {integrity: sha512-7SmLs/CbH2sMURt0sB8OAoQ/hW+9y0+bSgOmBWWl29GU4IWmIXlDnInRuYAVXxBLzFNBhX4GNDodukhzEBv2xg==}
+  koval-ui@0.19.0:
+    resolution: {integrity: sha512-j+QglIXkDnixFZEShyQygSwU04ZPWhF126e0soPU/l5LZLBkObelAS+6v+kGtrmiaAWNkvCpz44orZRtwbBgJA==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -4104,7 +4095,7 @@ snapshots:
       '@floating-ui/react': 0.26.28(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/focus': 3.19.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/interactions': 3.23.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@tanstack/react-virtual': 3.10.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@tanstack/react-virtual': 3.13.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -4248,7 +4239,7 @@ snapshots:
     dependencies:
       '@lezer/common': 1.2.3
 
-  '@material-symbols/svg-700@0.28.2': {}
+  '@material-symbols/svg-700@0.29.3': {}
 
   '@mdx-js/mdx@3.1.0(acorn@8.12.0)':
     dependencies:
@@ -4525,12 +4516,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@tanstack/react-virtual@3.10.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@tanstack/virtual-core': 3.10.7
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@tanstack/react-virtual@3.13.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tanstack/virtual-core': 3.13.0
@@ -4538,8 +4523,6 @@ snapshots:
       react-dom: 19.0.0(react@19.0.0)
 
   '@tanstack/table-core@8.21.2': {}
-
-  '@tanstack/virtual-core@3.10.7': {}
 
   '@tanstack/virtual-core@3.13.0': {}
 
@@ -6658,11 +6641,11 @@ snapshots:
 
   kolorist@1.8.0: {}
 
-  koval-ui@0.18.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  koval-ui@0.19.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@floating-ui/react-dom': 2.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@fontsource-variable/rubik': 5.1.1
-      '@material-symbols/svg-700': 0.28.2
+      '@material-symbols/svg-700': 0.29.3
       '@phosphor-icons/core': 2.1.1
       '@tanstack/react-table': 8.21.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@tanstack/react-virtual': 3.13.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
