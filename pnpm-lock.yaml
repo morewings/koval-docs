@@ -24,8 +24,8 @@ importers:
         specifier: 0.7.9
         version: 0.7.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       koval-ui:
-        specifier: 0.18.1
-        version: 0.18.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.19.1
+        version: 0.19.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       next:
         specifier: 15.1.7
         version: 15.1.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -261,8 +261,8 @@ packages:
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
-  '@fontsource-variable/rubik@5.1.1':
-    resolution: {integrity: sha512-Xh6Y39Xx1v0AIERdU+JsHiGx7I7WhN349jA/dFln8Ufud3c56yA0QS/aPdGMvyH/l+bXVmNV12cWF0hQm5ZPRw==}
+  '@fontsource-variable/rubik@5.2.5':
+    resolution: {integrity: sha512-6tXqnHFA9/ItIEODfH5LrzLSmcNE5TXD8OuXx14cvmS7j1zX4JgEHjYrhlWhLGuBXXzrOnz0A0oMheMMbXwmWA==}
 
   '@formatjs/intl-localematcher@0.5.10':
     resolution: {integrity: sha512-af3qATX+m4Rnd9+wHcjJ4w2ijq+rAVP3CCinJQvFv1kgSu1W6jypUmvleJxcewdxmutM8dmIRZFxO/IQBZmP2Q==}
@@ -427,8 +427,8 @@ packages:
   '@lezer/lr@1.4.2':
     resolution: {integrity: sha512-pu0K1jCIdnQ12aWNaAVU5bzi7Bd1w54J3ECgANPmYLtQKP0HBj2cE/5coBD66MT10xbtIuUr7tg0Shbsvk0mDA==}
 
-  '@material-symbols/svg-700@0.28.2':
-    resolution: {integrity: sha512-R02PisGtrvoCpsdukSghz/S9tXqS3L5Uw96pEvDs+P45LvYVzY20plFMRtXFmP8n3OHj/KfjhU0bdRchOeSC0A==}
+  '@material-symbols/svg-700@0.31.0':
+    resolution: {integrity: sha512-cotE1JGpxfp65MYvf6m2NZDnuYr+BY1ArKhgHUytyoGIpjakfesvDGcdMnJumdoNRmuNlDfhN6Ga5AbWWMwIxw==}
 
   '@mdx-js/mdx@3.1.0':
     resolution: {integrity: sha512-/QxEhPAvGwbQmy1Px8F899L5Uc2KZ6JtXwlCgJmjSTBedwOZkByYcBG4GceIGPXRDsmfxhHazuS+hlOShRLeDw==}
@@ -697,14 +697,14 @@ packages:
       react: '>=16.8'
       react-dom: '>=16.8'
 
-  '@tanstack/react-virtual@3.10.7':
-    resolution: {integrity: sha512-yeP+M0G8D+15ZFPivpuQ5hoM4Fa/PzERBx8P8EGcfEsXX3JOb9G9UUrqc47ZXAxvK+YqzM9T5qlJUYUFOwCZJw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-
   '@tanstack/react-virtual@3.13.0':
     resolution: {integrity: sha512-CchF0NlLIowiM2GxtsoKBkXA4uqSnY2KvnXo+kyUFD4a4ll6+J0qzoRsUPMwXV/H26lRsxgJIr/YmjYum2oEjg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  '@tanstack/react-virtual@3.13.6':
+    resolution: {integrity: sha512-WT7nWs8ximoQ0CDx/ngoFP7HbQF9Q2wQe4nh2NB+u2486eX3nZRE40P9g6ccCVq7ZfTSH5gFOuCoVH5DLNS/aA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -713,11 +713,11 @@ packages:
     resolution: {integrity: sha512-uvXk/U4cBiFMxt+p9/G7yUWI/UbHYbyghLCjlpWZ3mLeIZiUBSKcUnw9UnKkdRz7Z/N4UBuFLWQdJCjUe7HjvA==}
     engines: {node: '>=12'}
 
-  '@tanstack/virtual-core@3.10.7':
-    resolution: {integrity: sha512-ND5dfsU0n9F4gROzwNNDJmg6y8n9pI8YWxtgbfJ5UcNn7Hx+MxEXtXcQ189tS7sh8pmCObgz2qSiyRKTZxT4dg==}
-
   '@tanstack/virtual-core@3.13.0':
     resolution: {integrity: sha512-NBKJP3OIdmZY3COJdWkSonr50FMVIi+aj5ZJ7hI/DTpEKg2RMfo/KvP8A3B/zOSpMgIe52B5E2yn7rryULzA6g==}
+
+  '@tanstack/virtual-core@3.13.6':
+    resolution: {integrity: sha512-cnQUeWnhNP8tJ4WsGcYiX24Gjkc9ALstLbHcBj1t3E7EimN6n6kHH+DPV4PpDnuw00NApQp+ViojMj1GRdwYQg==}
 
   '@theguild/remark-mermaid@0.1.3':
     resolution: {integrity: sha512-2FjVlaaKXK7Zj7UJAgOVTyaahn/3/EAfqYhyXg0BfDBVUl+lXcoIWRaxzqfnDr2rv8ax6GsC5mNh6hAaT86PDw==}
@@ -1308,6 +1308,13 @@ packages:
 
   css-vars-hook@0.7.9:
     resolution: {integrity: sha512-tEY8Gb24kDPVD2d81KlEXf1t1vHKc5dCpt/hyX98ZYOPQCfdRrg96Yy5Vvs09y2OGxVhLNLrjPZs5OMpqqRasg==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      react: '>=18.2.0'
+      react-dom: '>=18.2.0'
+
+  css-vars-hook@0.8.0:
+    resolution: {integrity: sha512-o7tw+2ipPTtnzuz32STykXALLypZwrJUKVlkdawLdjeiqSybkvwXTxKufmyaUCBd6BsCBIlQcFmMzWOQBbyNNQ==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '>=18.2.0'
@@ -2466,8 +2473,8 @@ packages:
   kolorist@1.8.0:
     resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
 
-  koval-ui@0.18.1:
-    resolution: {integrity: sha512-7SmLs/CbH2sMURt0sB8OAoQ/hW+9y0+bSgOmBWWl29GU4IWmIXlDnInRuYAVXxBLzFNBhX4GNDodukhzEBv2xg==}
+  koval-ui@0.19.1:
+    resolution: {integrity: sha512-B/yTmSCOVc4gPi8O0aHqoW/vzFkU7SZORIjCUAPpg7IebTWVu4JSEtfKRCzlTI1hzIImiyrVvf8GV8qMebXV9w==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
@@ -3702,8 +3709,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  use-debounce@10.0.3:
-    resolution: {integrity: sha512-DxQSI9ZKso689WM1mjgGU3ozcxU1TJElBJ3X6S4SMzMNcm2lVH0AHmyXB+K7ewjz2BSUKJTDqTcwtSMRfB89dg==}
+  use-debounce@10.0.4:
+    resolution: {integrity: sha512-6Cf7Yr7Wk7Kdv77nnJMf6de4HuDE4dTxKij+RqE9rufDsI6zsbjyAxcH5y2ueJCQAnfgKbzXbZHYlkFwmBlWkw==}
     engines: {node: '>= 16.0.0'}
     peerDependencies:
       react: '*'
@@ -4093,7 +4100,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@fontsource-variable/rubik@5.1.1': {}
+  '@fontsource-variable/rubik@5.2.5': {}
 
   '@formatjs/intl-localematcher@0.5.10':
     dependencies:
@@ -4104,7 +4111,7 @@ snapshots:
       '@floating-ui/react': 0.26.28(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/focus': 3.19.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@react-aria/interactions': 3.23.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@tanstack/react-virtual': 3.10.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@tanstack/react-virtual': 3.13.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
@@ -4248,7 +4255,7 @@ snapshots:
     dependencies:
       '@lezer/common': 1.2.3
 
-  '@material-symbols/svg-700@0.28.2': {}
+  '@material-symbols/svg-700@0.31.0': {}
 
   '@mdx-js/mdx@3.1.0(acorn@8.12.0)':
     dependencies:
@@ -4525,23 +4532,23 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@tanstack/react-virtual@3.10.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@tanstack/virtual-core': 3.10.7
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@tanstack/react-virtual@3.13.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tanstack/virtual-core': 3.13.0
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
+  '@tanstack/react-virtual@3.13.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@tanstack/virtual-core': 3.13.6
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+
   '@tanstack/table-core@8.21.2': {}
 
-  '@tanstack/virtual-core@3.10.7': {}
-
   '@tanstack/virtual-core@3.13.0': {}
+
+  '@tanstack/virtual-core@3.13.6': {}
 
   '@theguild/remark-mermaid@0.1.3(react@19.0.0)':
     dependencies:
@@ -5194,6 +5201,11 @@ snapshots:
       which: 2.0.2
 
   css-vars-hook@0.7.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+
+  css-vars-hook@0.8.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
@@ -6658,21 +6670,21 @@ snapshots:
 
   kolorist@1.8.0: {}
 
-  koval-ui@0.18.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  koval-ui@0.19.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@floating-ui/react-dom': 2.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@fontsource-variable/rubik': 5.1.1
-      '@material-symbols/svg-700': 0.28.2
+      '@fontsource-variable/rubik': 5.2.5
+      '@material-symbols/svg-700': 0.31.0
       '@phosphor-icons/core': 2.1.1
       '@tanstack/react-table': 8.21.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@tanstack/react-virtual': 3.13.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@tanstack/react-virtual': 3.13.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       awesome-debounce-promise: 2.1.0
       classnames: 2.5.1
-      css-vars-hook: 0.7.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      css-vars-hook: 0.8.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       the-new-css-reset: 1.11.3
-      use-debounce: 10.0.3(react@19.0.0)
+      use-debounce: 10.0.4(react@19.0.0)
 
   langium@3.0.0:
     dependencies:
@@ -8586,7 +8598,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  use-debounce@10.0.3(react@19.0.0):
+  use-debounce@10.0.4(react@19.0.0):
     dependencies:
       react: 19.0.0
 
