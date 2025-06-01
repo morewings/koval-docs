@@ -21,8 +21,8 @@ importers:
         specifier: 1.5.0
         version: 1.5.0(next@15.1.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
       css-vars-hook:
-        specifier: 0.7.9
-        version: 0.7.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.8.2
+        version: 0.8.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       koval-ui:
         specifier: 0.18.1
         version: 0.18.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1308,6 +1308,13 @@ packages:
 
   css-vars-hook@0.7.9:
     resolution: {integrity: sha512-tEY8Gb24kDPVD2d81KlEXf1t1vHKc5dCpt/hyX98ZYOPQCfdRrg96Yy5Vvs09y2OGxVhLNLrjPZs5OMpqqRasg==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      react: '>=18.2.0'
+      react-dom: '>=18.2.0'
+
+  css-vars-hook@0.8.2:
+    resolution: {integrity: sha512-C3AjLXZr/dcBOhZaAABpLZAns3b8Ads3V0PpOFcIyLh0xrJ2iDSHxmrheRvKKfFq5wD9Xx+24QYQW3x3yZeZGQ==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '>=18.2.0'
@@ -5194,6 +5201,11 @@ snapshots:
       which: 2.0.2
 
   css-vars-hook@0.7.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+
+  css-vars-hook@0.8.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
